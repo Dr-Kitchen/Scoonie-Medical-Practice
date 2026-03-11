@@ -1,0 +1,25 @@
+{
+  "name": "Scoonie Medical Practice",
+  "address": {
+    "line1": "Cameron Health Centre",
+    "line2": "Methil",
+    "town": "Leven",
+    "postcode": "KY8 3LG"
+  },
+  "phone": "01592 712800",
+  "email": "scoonie.surgery@nhs.scot",
+  "url": "https://www.scooniemedical.scot",
+  "openingHours": [
+    { "day": "Monday", "open": "08:00", "close": "18:00" },
+    { "day": "Tuesday", "open": "08:00", "close": "18:00" },
+    { "day": "Wednesday", "open": "08:00", "close": "18:00" },
+    { "day": "Thursday", "open": "08:00", "close": "18:00" },
+    { "day": "Friday", "open": "08:00", "close": "18:00" },
+    { "day": "Saturday", "open": null, "close": null },
+    { "day": "Sunday", "open": null, "close": null }
+  ],
+  "outOfHours": "NHS 24 on 111",
+  "bslLink": "https://contactscotland-bsl.org/",
+  "nhsInformScotland": "https://www.nhsinform.scot/",
+  "patientAccess": "https://www.patientaccess.com/"
+}

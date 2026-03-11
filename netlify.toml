@@ -1,0 +1,46 @@
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[redirects]]
+  from = "/welcome/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/appointments/*"
+  to = "/get-help/book-appointment/"
+  status = 301
+
+[[redirects]]
+  from = "/out-of-hours-*"
+  to = "/get-help/urgent-care/"
+  status = 301
+
+[[redirects]]
+  from = "/staff/*"
+  to = "/about/our-team/"
+  status = 301
+
+[[redirects]]
+  from = "/new-patients/*"
+  to = "/new-patients/"
+  status = 301
+
+[[redirects]]
+  from = "/self-referral-services/*"
+  to = "/get-help/self-referral/"
+  status = 301
+
+[[redirects]]
+  from = "/coronavirus-covid-19-information/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/data-protection-notice/*"
+  to = "/contact/data-protection/"
+  status = 301

@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-neutral-dark bg-white font-sans text-base;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  h1 { @apply text-2xl font-bold leading-tight md:text-3xl lg:text-4xl; }
+  h2 { @apply text-xl font-bold leading-tight md:text-2xl; }
+  h3 { @apply text-lg font-semibold md:text-xl; }
+  h4 { @apply text-base font-semibold; }
+
+  a {
+    @apply text-brand-primary underline;
+  }
+  a:hover {
+    @apply text-brand-dark;
+  }
+
+  :focus-visible {
+    outline: 3px solid #005eb8;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Skip to content */
+  .skip-link {
+    @apply absolute -top-full left-4 z-50 bg-brand-primary text-white px-4 py-2 rounded-b font-semibold;
+    transition: top 0.1s;
+  }
+  .skip-link:focus {
+    @apply top-0;
+  }
+
+  /* Alert banner */
+  .alert-banner {
+    @apply w-full px-4 py-3 text-white text-sm font-medium;
+  }
+  .alert-banner--info { @apply bg-brand-primary; }
+  .alert-banner--warning { @apply bg-alert-warning; }
+  .alert-banner--urgent { @apply bg-alert-urgent; }
+
+  /* Header */
+  .site-header {
+    @apply bg-white border-b border-gray-200 sticky top-0 z-40;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply block px-3 py-2 text-neutral-dark font-medium rounded hover:bg-brand-light hover:text-brand-primary transition-colors;
+  }
+  .nav-link--active {
+    @apply bg-brand-light text-brand-primary;
+  }
+
+  /* Action card */
+  .action-card {
+    @apply flex flex-col items-start bg-white border border-gray-200 rounded-lg p-5 hover:border-brand-primary hover:shadow-md transition-all text-left w-full;
+    min-height: 44px;
+  }
+  .action-card:hover .action-card__title {
+    @apply text-brand-primary;
+  }
+  .action-card__icon {
+    @apply w-10 h-10 mb-3 text-brand-primary;
+  }
+  .action-card__title {
+    @apply text-lg font-semibold text-neutral-dark mb-1;
+  }
+  .action-card__desc {
+    @apply text-sm text-neutral-mid mb-3 leading-relaxed;
+  }
+  .action-card__cta {
+    @apply mt-auto text-sm font-semibold text-brand-primary no-underline;
+  }
+
+  /* Service card */
+  .service-card {
+    @apply bg-white border border-gray-200 rounded-lg p-5;
+  }
+  .service-card__title {
+    @apply font-semibold text-neutral-dark mb-1;
+  }
+  .service-card__desc {
+    @apply text-sm text-neutral-mid leading-relaxed;
+  }
+
+  /* Staff card */
+  .staff-card {
+    @apply bg-white border border-gray-200 rounded-lg overflow-hidden;
+  }
+  .staff-card__photo {
+    @apply w-full aspect-square bg-brand-light flex items-center justify-center;
+  }
+  .staff-card__body {
+    @apply p-4;
+  }
+  .staff-card__name {
+    @apply font-semibold text-neutral-dark;
+  }
+  .staff-card__role {
+    @apply text-sm text-brand-primary;
+  }
+  .staff-card__quals {
+    @apply text-xs text-neutral-mid mt-1;
+  }
+
+  /* Page header */
+  .page-header {
+    @apply bg-brand-light py-8 px-4 md:py-12;
+  }
+  .page-header__breadcrumb {
+    @apply text-sm text-neutral-mid mb-2;
+  }
+  .page-header__title {
+    @apply text-2xl font-bold text-neutral-dark md:text-3xl;
+  }
+  .page-header__intro {
+    @apply mt-3 text-base text-neutral-mid max-w-2xl leading-relaxed;
+  }
+
+  /* Opening hours table */
+  .hours-table {
+    @apply w-full text-sm;
+  }
+  .hours-table tr.today {
+    @apply bg-brand-light font-semibold;
+  }
+  .hours-table td {
+    @apply py-2 px-3 border-b border-gray-100;
+  }
+
+  /* Collapsible */
+  .collapsible__button {
+    @apply flex justify-between items-center w-full text-left py-3 px-4 bg-white border border-gray-200 rounded-lg font-medium text-neutral-dark hover:bg-brand-light hover:text-brand-primary transition-colors;
+    min-height: 44px;
+  }
+  .collapsible__content {
+    @apply hidden px-4 py-3 border border-t-0 border-gray-200 rounded-b-lg;
+  }
+  .collapsible__content.is-open {
+    @apply block;
+  }
+  .collapsible__icon {
+    @apply w-5 h-5 transition-transform;
+  }
+  .collapsible__button[aria-expanded="true"] .collapsible__icon {
+    @apply rotate-180;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center px-5 py-3 rounded font-semibold text-base transition-colors no-underline;
+    min-height: 44px;
+  }
+  .btn--primary {
+    @apply bg-brand-primary text-white hover:bg-brand-dark;
+  }
+  .btn--secondary {
+    @apply bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-light;
+  }
+  .btn--urgent {
+    @apply bg-alert-urgent text-white hover:bg-red-800;
+  }
+
+  /* Contact block */
+  .contact-block {
+    @apply bg-neutral-warm rounded-lg p-5 space-y-3;
+  }
+  .contact-block__item {
+    @apply flex items-start gap-3 text-sm;
+  }
+  .contact-block__icon {
+    @apply w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5;
+  }
+
+  /* Prose for content pages */
+  .prose-content {
+    @apply text-neutral-dark leading-relaxed;
+  }
+  .prose-content h2 {
+    @apply text-xl font-bold mt-8 mb-3;
+  }
+  .prose-content h3 {
+    @apply text-lg font-semibold mt-6 mb-2;
+  }
+  .prose-content p {
+    @apply mb-4;
+  }
+  .prose-content ul {
+    @apply list-disc pl-5 mb-4 space-y-1;
+  }
+  .prose-content ol {
+    @apply list-decimal pl-5 mb-4 space-y-1;
+  }
+  .prose-content li {
+    @apply leading-relaxed;
+  }
+  .prose-content a {
+    @apply text-brand-primary underline;
+  }
+
+  /* Hero */
+  .hero {
+    @apply bg-brand-primary text-white py-10 px-4 md:py-16;
+  }
+  .hero__practice-name {
+    @apply text-2xl font-bold md:text-4xl mb-2;
+  }
+  .hero__address {
+    @apply text-brand-light text-base md:text-lg mb-1;
+  }
+  .hero__phone {
+    @apply text-xl font-semibold md:text-2xl mb-4;
+  }
+  .hero__welcome {
+    @apply text-base text-brand-light max-w-xl leading-relaxed;
+  }
+
+  /* Signposting section */
+  .signpost-section {
+    @apply bg-neutral-warm py-10 px-4;
+  }
+
+  /* Footer */
+  .site-footer {
+    @apply bg-neutral-dark text-gray-300 py-10;
+  }
+  .site-footer a {
+    @apply text-gray-300 hover:text-white;
+  }
+  .site-footer__heading {
+    @apply text-white font-semibold mb-3 text-sm uppercase tracking-wide;
+  }
+}

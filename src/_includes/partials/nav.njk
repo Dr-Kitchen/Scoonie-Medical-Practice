@@ -1,0 +1,101 @@
+<header class="site-header" role="banner">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Logo / Practice name -->
+      <a href="/" class="flex items-center gap-2 no-underline" aria-label="{{ site.name }} - Home">
+        <span class="text-brand-primary font-bold text-lg leading-tight">
+          Scoonie<br>
+          <span class="text-neutral-dark font-normal text-sm">Medical Practice</span>
+        </span>
+      </a>
+
+      <!-- Desktop navigation -->
+      <nav aria-label="Main navigation" class="hidden lg:flex items-center gap-1">
+        {% for item in navigation %}
+          {% if item.children %}
+            <div class="relative group">
+              <button
+                class="nav-link flex items-center gap-1"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                {{ item.label }}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div class="absolute top-full left-0 w-56 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all z-50 py-1">
+                <a href="{{ item.url }}" class="block px-4 py-2 text-sm font-semibold text-brand-primary hover:bg-brand-light border-b border-gray-100">
+                  {{ item.label }} overview
+                </a>
+                {% for child in item.children %}
+                <a href="{{ child.url }}" class="block px-4 py-2 text-sm text-neutral-dark hover:bg-brand-light hover:text-brand-primary">
+                  {{ child.label }}
+                </a>
+                {% endfor %}
+              </div>
+            </div>
+          {% else %}
+            <a href="{{ item.url }}" class="nav-link {% if page.url == item.url %}nav-link--active{% endif %}">
+              {{ item.label }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button
+        data-menu-toggle
+        class="lg:hidden flex items-center justify-center w-11 h-11 rounded text-neutral-dark hover:bg-gray-100"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-label="Open navigation menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <nav
+      id="mobile-menu"
+      data-mobile-menu
+      class="hidden lg:hidden border-t border-gray-200 pb-4"
+      aria-label="Mobile navigation"
+    >
+      {% for item in navigation %}
+        {% if item.children %}
+          <div>
+            <button
+              data-submenu-toggle
+              aria-expanded="false"
+              aria-controls="submenu-{{ loop.index }}"
+              class="flex items-center justify-between w-full px-0 py-3 font-medium text-neutral-dark border-b border-gray-100"
+            >
+              {{ item.label }}
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="submenu-{{ loop.index }}" class="hidden pl-4">
+              <a href="{{ item.url }}" class="block py-2 text-sm text-brand-primary font-medium border-b border-gray-50">
+                {{ item.label }} overview
+              </a>
+              {% for child in item.children %}
+              <a href="{{ child.url }}" class="block py-2 text-sm text-neutral-dark hover:text-brand-primary">
+                {{ child.label }}
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+        {% else %}
+          <a href="{{ item.url }}" class="block py-3 font-medium text-neutral-dark border-b border-gray-100 hover:text-brand-primary">
+            {{ item.label }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+  </div>
+</header>
