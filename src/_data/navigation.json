@@ -1,0 +1,49 @@
+[
+  { "label": "Home", "url": "/" },
+  {
+    "label": "Get Help",
+    "url": "/get-help/",
+    "children": [
+      { "label": "Book an Appointment", "url": "/get-help/book-appointment/" },
+      { "label": "Urgent Care", "url": "/get-help/urgent-care/" },
+      { "label": "Pharmacy First", "url": "/get-help/pharmacy-first/" },
+      { "label": "Self-Referral Services", "url": "/get-help/self-referral/" }
+    ]
+  },
+  {
+    "label": "Prescriptions",
+    "url": "/prescriptions/",
+    "children": [
+      { "label": "Order a Repeat Prescription", "url": "/prescriptions/order-repeat/" },
+      { "label": "Medication Queries", "url": "/prescriptions/medication-queries/" }
+    ]
+  },
+  {
+    "label": "New Patients",
+    "url": "/new-patients/",
+    "children": [
+      { "label": "Register with Us", "url": "/new-patients/register/" },
+      { "label": "Practice Area", "url": "/new-patients/practice-area/" },
+      { "label": "Medical Records", "url": "/new-patients/medical-records/" }
+    ]
+  },
+  {
+    "label": "About Us",
+    "url": "/about/",
+    "children": [
+      { "label": "Our Team", "url": "/about/our-team/" },
+      { "label": "Opening Hours", "url": "/about/opening-hours/" },
+      { "label": "How We Work", "url": "/about/how-we-work/" },
+      { "label": "News", "url": "/about/news/" }
+    ]
+  },
+  {
+    "label": "Contact",
+    "url": "/contact/",
+    "children": [
+      { "label": "Get in Touch", "url": "/contact/get-in-touch/" },
+      { "label": "Feedback", "url": "/contact/feedback/" },
+      { "label": "Data Protection", "url": "/contact/data-protection/" }
+    ]
+  }
+]
