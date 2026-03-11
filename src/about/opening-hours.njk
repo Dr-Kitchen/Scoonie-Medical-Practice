@@ -1,0 +1,52 @@
+---
+layout: layouts/page.njk
+title: Opening hours
+intro: "We're open Monday to Friday. Here are our full opening hours and what to do when we're closed."
+description: "Opening hours for Scoonie Medical Practice — Monday to Friday 8am to 6pm, with out-of-hours guidance."
+breadcrumb:
+  - label: About us
+    url: /about/
+  - label: Opening hours
+---
+
+<div class="max-w-2xl">
+
+  <div class="bg-white border border-gray-200 rounded-lg overflow-hidden mb-8">
+    <table class="hours-table w-full" aria-label="Surgery opening hours">
+      <caption class="sr-only">Opening hours for Scoonie Medical Practice</caption>
+      <thead class="bg-brand-light">
+        <tr>
+          <th scope="col" class="py-3 px-4 text-left font-semibold text-neutral-dark">Day</th>
+          <th scope="col" class="py-3 px-4 text-left font-semibold text-neutral-dark">Hours</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in site.openingHours %}
+        <tr data-day="{{ row.day }}" class="border-t border-gray-100">
+          <td class="py-3 px-4 font-medium">{{ row.day }}</td>
+          <td class="py-3 px-4">
+            {% if row.open %}
+              {{ row.open }} – {{ row.close }}
+            {% else %}
+              <span class="text-neutral-mid">Closed</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="prose-content">
+    <h2>Telephone lines</h2>
+    <p>Telephone lines open from 08:00. If you call and our lines are busy, please hold or call back. We aim to answer all calls as quickly as possible.</p>
+
+    <h2>Public holidays</h2>
+    <p>We are closed on Scottish public holidays. When we're closed for a holiday, information will appear on our <a href="/">homepage</a> in advance.</p>
+
+    <h2>Out of hours</h2>
+    <p>When we're closed, you can get urgent medical advice by calling <a href="tel:111" class="font-semibold">NHS 24 on 111</a>, available 24 hours a day, 7 days a week.</p>
+    <p>For life-threatening emergencies, always call <a href="tel:999" class="font-semibold text-alert-urgent">999</a>.</p>
+  </div>
+
+</div>

@@ -1,0 +1,35 @@
+---
+layout: layouts/page.njk
+title: News and updates
+intro: "The latest news, service updates, and health information from Scoonie Medical Practice."
+description: "News and updates from Scoonie Medical Practice — service changes, health campaigns, and practice information."
+breadcrumb:
+  - label: About us
+    url: /about/
+  - label: News
+---
+
+<div class="max-w-3xl">
+  {% set newsItems = collections.news | sort(true, false, 'date') %}
+  {% if newsItems.length %}
+    <div class="space-y-6">
+      {% for post in newsItems %}
+      <article class="bg-white border border-gray-200 rounded-lg p-5">
+        <p class="text-sm text-neutral-mid mb-1">
+          <time datetime="{{ post.date | dateFormat }}">{{ post.date | readableDate }}</time>
+          {% if post.data.category %} · <span class="capitalize">{{ post.data.category }}</span>{% endif %}
+        </p>
+        <h2 class="text-lg font-semibold text-neutral-dark mb-2">
+          <a href="{{ post.url }}" class="hover:text-brand-primary">{{ post.data.title }}</a>
+        </h2>
+        {% if post.data.description %}
+        <p class="text-sm text-neutral-mid">{{ post.data.description }}</p>
+        {% endif %}
+        <a href="{{ post.url }}" class="text-brand-primary text-sm font-medium mt-3 inline-block">Read more →</a>
+      </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-neutral-mid">No news posts yet. Check back soon.</p>
+  {% endif %}
+</div>

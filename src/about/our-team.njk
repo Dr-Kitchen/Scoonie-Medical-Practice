@@ -1,0 +1,84 @@
+---
+layout: layouts/page.njk
+title: Our team
+intro: "Scoonie Medical Practice is staffed by experienced GPs, nurses, and support staff dedicated to your health."
+description: "Meet the GPs, nurses, and support staff at Scoonie Medical Practice in Methil, Fife."
+breadcrumb:
+  - label: About us
+    url: /about/
+  - label: Our team
+---
+
+<div class="prose-content max-w-3xl mb-8">
+  <p>Our team works together to provide the best possible care for our patients. Below you'll find information about each member of our clinical and support team.</p>
+</div>
+
+{% set gps = team | selectattr("category", "equalto", "gp") %}
+{% set nurses = team | selectattr("category", "equalto", "nurse") %}
+{% set other = team | rejectattr("category", "equalto", "gp") | rejectattr("category", "equalto", "nurse") %}
+
+<section aria-labelledby="gp-heading" class="mb-10">
+  <h2 id="gp-heading" class="text-xl font-bold text-neutral-dark mb-4">Doctors</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    {% for member in gps %}
+    <div class="staff-card">
+      <div class="staff-card__photo" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-16 h-16 text-brand-primary opacity-40">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+        </svg>
+      </div>
+      <div class="staff-card__body">
+        <p class="staff-card__name">{{ member.name }}</p>
+        <p class="staff-card__role">{{ member.role }}</p>
+        {% if member.qualifications %}
+        <p class="staff-card__quals">{{ member.qualifications }}</p>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section aria-labelledby="nurses-heading" class="mb-10">
+  <h2 id="nurses-heading" class="text-xl font-bold text-neutral-dark mb-4">Nursing team</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    {% for member in nurses %}
+    <div class="staff-card">
+      <div class="staff-card__photo" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-16 h-16 text-brand-primary opacity-40">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+        </svg>
+      </div>
+      <div class="staff-card__body">
+        <p class="staff-card__name">{{ member.name }}</p>
+        <p class="staff-card__role">{{ member.role }}</p>
+        {% if member.qualifications %}
+        <p class="staff-card__quals">{{ member.qualifications }}</p>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section aria-labelledby="support-heading">
+  <h2 id="support-heading" class="text-xl font-bold text-neutral-dark mb-4">Support team</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    {% for member in other %}
+    <div class="staff-card">
+      <div class="staff-card__photo" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-16 h-16 text-brand-primary opacity-40">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+        </svg>
+      </div>
+      <div class="staff-card__body">
+        <p class="staff-card__name">{{ member.name }}</p>
+        <p class="staff-card__role">{{ member.role }}</p>
+        {% if member.qualifications %}
+        <p class="staff-card__quals text-sm text-neutral-mid mt-1">{{ member.qualifications }}</p>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
