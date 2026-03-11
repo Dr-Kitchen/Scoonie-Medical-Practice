@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+---
+<div class="page-header">
+  <div class="max-w-6xl mx-auto px-4">
+    {% if breadcrumb %}
+    <nav aria-label="Breadcrumb" class="page-header__breadcrumb">
+      <ol class="flex items-center gap-2 list-none">
+        <li><a href="/" class="hover:text-brand-primary">Home</a></li>
+        {% for crumb in breadcrumb %}
+        <li aria-hidden="true">/</li>
+        {% if loop.last %}
+        <li aria-current="page">{{ crumb.label }}</li>
+        {% else %}
+        <li><a href="{{ crumb.url }}" class="hover:text-brand-primary">{{ crumb.label }}</a></li>
+        {% endif %}
+        {% endfor %}
+      </ol>
+    </nav>
+    {% endif %}
+    <h1 class="page-header__title">{{ title }}</h1>
+    {% if intro %}
+    <p class="page-header__intro">{{ intro }}</p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="max-w-6xl mx-auto px-4 py-8 md:py-12">
+  {{ content | safe }}
+</div>

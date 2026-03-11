@@ -1,0 +1,67 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-gray-700">
+
+      <!-- Contact details -->
+      <div>
+        <h2 class="site-footer__heading">Contact us</h2>
+        <address class="not-italic space-y-2 text-sm">
+          <p>{{ site.name }}</p>
+          <p>{{ site.address.line1 }}<br>{{ site.address.line2 }}<br>{{ site.address.town }}<br>{{ site.address.postcode }}</p>
+          <p>
+            <a href="tel:{{ site.phone | replace(' ', '') }}">
+              Tel: {{ site.phone }}
+            </a>
+          </p>
+          <p>
+            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          </p>
+        </address>
+      </div>
+
+      <!-- Useful links -->
+      <div>
+        <h2 class="site-footer__heading">Useful links</h2>
+        <ul class="space-y-2 text-sm list-none">
+          <li><a href="/get-help/book-appointment/">Book an appointment</a></li>
+          <li><a href="/prescriptions/order-repeat/">Order a prescription</a></li>
+          <li><a href="/new-patients/register/">Register with us</a></li>
+          <li><a href="/get-help/urgent-care/">Urgent care</a></li>
+          <li><a href="/about/opening-hours/">Opening hours</a></li>
+          <li><a href="{{ site.nhsInformScotland }}" rel="noopener noreferrer">NHS Inform Scotland</a></li>
+        </ul>
+      </div>
+
+      <!-- Out of hours -->
+      <div>
+        <h2 class="site-footer__heading">Out of hours</h2>
+        <p class="text-sm mb-3">When we're closed, help is always available. Do not wait until the surgery opens if you need urgent care.</p>
+        <ul class="space-y-2 text-sm list-none">
+          <li><a href="tel:111"><strong class="text-white">NHS 24 — call 111</strong></a></li>
+          <li><a href="tel:999">Emergency services — call 999</a></li>
+          <li><a href="https://111.nhs.uk/" rel="noopener noreferrer">NHS 24 online</a></li>
+        </ul>
+      </div>
+
+      <!-- Accessibility & BSL -->
+      <div>
+        <h2 class="site-footer__heading">Accessibility</h2>
+        <ul class="space-y-2 text-sm list-none">
+          <li>
+            <a href="{{ site.bslLink }}" rel="noopener noreferrer">
+              BSL video relay service<br>
+              <span class="text-xs text-gray-400">(ContactSCOTLAND)</span>
+            </a>
+          </li>
+          <li><a href="/contact/data-protection/">Data protection</a></li>
+          <li><a href="/contact/feedback/">Give feedback</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-6 flex flex-col md:flex-row justify-between items-start gap-4 text-xs text-gray-500">
+      <p>&copy; {{ '' | date('yyyy') if '' | date else '2025' }} {{ site.name }}. Part of NHS Fife.</p>
+      <p>Website rebuilt for better patient access.</p>
+    </div>
+  </div>
+</footer>
