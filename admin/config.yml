@@ -1,0 +1,110 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/assets/images"
+public_folder: "/assets/images"
+
+collections:
+  # Alert Banner
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "alert"
+        label: "Alert Banner"
+        file: "src/_data/alert.json"
+        fields:
+          - label: "Show alert banner"
+            name: "active"
+            widget: "boolean"
+            default: false
+          - label: "Severity"
+            name: "severity"
+            widget: "select"
+            options:
+              - { label: "Information (blue)", value: "info" }
+              - { label: "Warning (amber)", value: "warning" }
+              - { label: "Urgent (red)", value: "urgent" }
+            default: "info"
+          - label: "Banner title (optional)"
+            name: "title"
+            widget: "string"
+            required: false
+          - label: "Banner message"
+            name: "body"
+            widget: "text"
+
+  # News Posts
+  - name: "news"
+    label: "News"
+    folder: "src/news"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "practice news"
+          - "service update"
+          - "health campaign"
+          - "staff news"
+        required: false
+      - { label: "Summary (shown in news list)", name: "description", widget: "text", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/page.njk" }
+      - { label: "Tags", name: "tags", widget: "hidden", default: "news" }
+
+  # Team Members
+  - name: "team"
+    label: "Our Team"
+    files:
+      - name: "team"
+        label: "Team Members"
+        file: "src/_data/team.json"
+        fields:
+          - label: "Team members"
+            name: "root"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Qualifications", name: "qualifications", widget: "string", required: false }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "GP", value: "gp" }
+                  - { label: "Nurse", value: "nurse" }
+                  - { label: "Management", value: "management" }
+                  - { label: "Admin / Reception", value: "admin" }
+
+  # Opening Hours
+  - name: "opening_hours"
+    label: "Opening Hours"
+    files:
+      - name: "hours"
+        label: "Opening Hours"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Practice name", name: "name", widget: "string" }
+          - label: "Address"
+            name: "address"
+            widget: "object"
+            fields:
+              - { label: "Line 1", name: "line1", widget: "string" }
+              - { label: "Line 2", name: "line2", widget: "string" }
+              - { label: "Town", name: "town", widget: "string" }
+              - { label: "Postcode", name: "postcode", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Website URL", name: "url", widget: "string" }
+          - label: "Opening hours"
+            name: "openingHours"
+            widget: "list"
+            fields:
+              - { label: "Day", name: "day", widget: "string" }
+              - { label: "Open (e.g. 08:00)", name: "open", widget: "string", required: false }
+              - { label: "Close (e.g. 18:00)", name: "close", widget: "string", required: false }
