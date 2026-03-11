@@ -1,0 +1,41 @@
+---
+layout: layouts/page.njk
+title: Urgent care
+intro: "If you need urgent medical help when the surgery is closed, help is always available. Here's who to contact."
+description: "Find out who to contact for urgent medical care when Scoonie Medical Practice is closed — NHS 24, 999, and local services."
+breadcrumb:
+  - label: Get Help
+    url: /get-help/
+  - label: Urgent care
+---
+
+<div class="prose-content max-w-3xl">
+
+  <div class="bg-red-50 border border-red-200 rounded-lg p-5 mb-8">
+    <h2 class="text-alert-urgent text-lg font-bold mb-2">Emergency? Call 999</h2>
+    <p class="text-neutral-dark">If you or someone else is in immediate danger or has a life-threatening emergency, call <a href="tel:999" class="text-alert-urgent font-bold">999</a> or go to your nearest A&amp;E immediately.</p>
+  </div>
+
+  <h2>When we're closed — call NHS 24</h2>
+  <p>When the surgery is closed, NHS 24 provides urgent medical advice and treatment.</p>
+  <div class="bg-brand-light rounded-lg p-5 mb-6">
+    <p class="text-2xl font-bold text-brand-primary mb-1"><a href="tel:111" class="no-underline text-brand-primary">111</a></p>
+    <p class="text-sm text-neutral-mid">Free to call, 24 hours a day, 7 days a week<br>Also available online at <a href="https://111.nhs.uk/" rel="noopener noreferrer">111.nhs.uk</a></p>
+  </div>
+
+  <h2>Our opening hours</h2>
+  <p>The surgery is open Monday to Friday, 08:00 to 18:00. We are closed on weekends and public holidays.</p>
+  <p>On days when we are open, call us on <a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a> from 08:00 for urgent same-day appointments.</p>
+
+  <h2>Other urgent services</h2>
+
+  <h3>NHS 24 Online</h3>
+  <p>Get symptom advice and self-care information at <a href="https://www.nhsinform.scot/" rel="noopener noreferrer">NHS Inform</a>.</p>
+
+  <h3>Mental health crisis</h3>
+  <p>If you are experiencing a mental health crisis, you can call NHS 24 on 111 and ask for the mental health team. The Samaritans are also available 24/7 on <a href="tel:116123">116 123</a> (free, no caller ID).</p>
+
+  <h3>Dental emergencies</h3>
+  <p>For urgent dental problems outside practice hours, call NHS 24 on 111.</p>
+
+</div>

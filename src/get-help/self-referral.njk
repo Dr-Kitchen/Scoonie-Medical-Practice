@@ -1,0 +1,38 @@
+---
+layout: layouts/page.njk
+title: Self-referral services
+intro: "You can refer yourself directly to many NHS services — no appointment with us needed first."
+description: "Self-refer directly to NHS physiotherapy, mental health, smoking cessation, and other services in Fife without a GP referral."
+breadcrumb:
+  - label: Get Help
+    url: /get-help/
+  - label: Self-referral services
+---
+
+<div class="prose-content max-w-3xl mb-8">
+  <p>Many NHS services in Fife allow you to refer yourself directly, without needing a GP appointment first. This is often faster and just as effective.</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl">
+
+  {% for service in selfReferralServices %}
+  <div class="service-card">
+    <h2 class="service-card__title text-base">{{ service.name }}</h2>
+    <p class="service-card__desc">{{ service.description }}</p>
+    {% if service.howToRefer %}
+    <p class="text-sm mt-2"><strong>How to refer:</strong> {{ service.howToRefer }}</p>
+    {% endif %}
+    {% if service.link %}
+    <a href="{{ service.link }}" class="text-brand-primary text-sm font-medium mt-2 inline-block" rel="noopener noreferrer">Find out more →</a>
+    {% endif %}
+    {% if service.phone %}
+    <p class="text-sm mt-1"><a href="tel:{{ service.phone | replace(' ', '') }}" class="text-brand-primary">{{ service.phone }}</a></p>
+    {% endif %}
+  </div>
+  {% endfor %}
+
+</div>
+
+<div class="mt-8 prose-content max-w-3xl">
+  <p class="text-sm text-neutral-mid">Can't find what you need? <a href="/contact/get-in-touch/">Contact us</a> and we'll help you find the right service.</p>
+</div>

@@ -1,0 +1,64 @@
+[
+  {
+    "name": "Physiotherapy",
+    "description": "Refer yourself for assessment and treatment of musculoskeletal problems — back pain, joint pain, sports injuries, and more.",
+    "howToRefer": "Call Fife Community Physiotherapy or use the online self-referral form.",
+    "link": "https://www.nhsfife.org/services/all-services/physiotherapy/self-referral/"
+  },
+  {
+    "name": "Mental health (Talking therapies / IAPT)",
+    "description": "Access counselling, cognitive behavioural therapy (CBT), and other talking therapies for anxiety, depression, and stress.",
+    "howToRefer": "Refer yourself online via NHS Fife Psychological Therapies.",
+    "link": "https://www.nhsfife.org/services/all-services/psychology/"
+  },
+  {
+    "name": "Smoking cessation",
+    "description": "Get free NHS support to stop smoking, including nicotine replacement therapy and one-to-one advice.",
+    "howToRefer": "Call the Quit Your Way Fife service or speak to your pharmacist.",
+    "link": "https://www.nhsinform.scot/healthy-living/stopping-smoking/",
+    "phone": "0800 84 84 84"
+  },
+  {
+    "name": "Weight management",
+    "description": "Access NHS weight management support, including dietary advice and structured programmes.",
+    "howToRefer": "Speak to your pharmacist or contact Counterweight / NHS Fife dietetics.",
+    "link": "https://www.nhsfife.org/services/all-services/dietetics/"
+  },
+  {
+    "name": "Sexual health",
+    "description": "Confidential sexual health services including STI testing, contraception advice, and treatment.",
+    "howToRefer": "Contact Fife Sexual Health service directly — no GP referral needed.",
+    "link": "https://www.nhsfife.org/services/all-services/sexual-health/",
+    "phone": "01592 226800"
+  },
+  {
+    "name": "Podiatry (foot care)",
+    "description": "For conditions affecting your feet and lower limbs. Self-refer if you have diabetes or a long-term condition.",
+    "howToRefer": "Contact NHS Fife Podiatry directly.",
+    "phone": "01592 226000"
+  },
+  {
+    "name": "Optometry (eye care)",
+    "description": "Get a free NHS eye test at any registered optician. They can also refer you for further treatment if needed.",
+    "howToRefer": "Book directly with any NHS-registered optician.",
+    "link": "https://www.nhsinform.scot/care-support-and-rights/nhs-services/dentists-opticians-and-pharmacists/opticians-and-eye-care/"
+  },
+  {
+    "name": "Speech and language therapy",
+    "description": "Support for adults with communication difficulties, swallowing problems, or voice disorders.",
+    "howToRefer": "Contact NHS Fife Speech and Language Therapy.",
+    "link": "https://www.nhsfife.org/services/all-services/speech-and-language-therapy/"
+  },
+  {
+    "name": "Community nursing (district nursing)",
+    "description": "Nursing care at home for patients who cannot easily attend the surgery — wound care, medication support, and more.",
+    "howToRefer": "Call our practice and we'll arrange a referral to the district nursing team.",
+    "phone": "{{ site.phone }}"
+  },
+  {
+    "name": "Occupational therapy",
+    "description": "Support to help you manage everyday activities if you have a long-term health condition or disability.",
+    "howToRefer": "Contact Fife Council Social Work for community OT, or NHS Fife for clinical OT.",
+    "link": "https://www.nhsfife.org/services/all-services/occupational-therapy/"
+  }
+]

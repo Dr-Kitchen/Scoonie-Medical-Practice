@@ -1,0 +1,38 @@
+---
+layout: layouts/page.njk
+title: Medication queries
+intro: "Have a question about your medication? Here's who to contact depending on your query."
+description: "Get answers to questions about your medication, side effects, dosage, or prescriptions at Scoonie Medical Practice."
+breadcrumb:
+  - label: Prescriptions
+    url: /prescriptions/
+  - label: Medication queries
+---
+
+<div class="prose-content max-w-3xl">
+
+  <h2>Ask your pharmacist first</h2>
+  <p>Your pharmacist is an expert in medicines and can answer many questions without you needing an appointment with us. They can advise on:</p>
+  <ul>
+    <li>Side effects of your medication</li>
+    <li>Whether your medication is safe to take with others</li>
+    <li>How and when to take your medication</li>
+    <li>Over-the-counter treatments for common conditions</li>
+  </ul>
+  <p>Pharmacists are available in person at your local pharmacy, and many offer a private consultation area.</p>
+
+  <h2>Contact us</h2>
+  <p>If your query cannot be answered by a pharmacist, or you have a concern about your prescribed treatment, please contact us:</p>
+  <ul>
+    <li><strong>Telephone:</strong> <a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a> — Monday to Friday, 08:00 to 18:00</li>
+    <li><strong>Email:</strong> <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+  </ul>
+  <p>Please do not email urgent medical queries. If you are concerned about a reaction to medication, call us or NHS 24 on 111.</p>
+
+  <h2>Changing or stopping medication</h2>
+  <p>Do not stop taking prescribed medication without speaking to a clinician first. If you'd like to discuss your medication, book an appointment or call us during opening hours.</p>
+
+  <h2>NHS Inform — medication advice</h2>
+  <p><a href="https://www.nhsinform.scot/tests-and-treatments/medicines-and-medical-aids/medicines/" rel="noopener noreferrer">NHS Inform</a> has reliable information about many common medicines, including what they're used for and possible side effects.</p>
+
+</div>

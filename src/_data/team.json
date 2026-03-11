@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Dr A. Smith",
+    "role": "GP Partner",
+    "qualifications": "MBChB, MRCGP",
+    "category": "gp"
+  },
+  {
+    "name": "Dr B. Jones",
+    "role": "GP Partner",
+    "qualifications": "MBChB, MRCGP, DRCOG",
+    "category": "gp"
+  },
+  {
+    "name": "Dr C. Brown",
+    "role": "Salaried GP",
+    "qualifications": "MBChB, MRCGP",
+    "category": "gp"
+  },
+  {
+    "name": "Sister J. Wilson",
+    "role": "Practice Nurse",
+    "qualifications": "RGN, BSc Nursing",
+    "category": "nurse"
+  },
+  {
+    "name": "Nurse Practitioner K. Taylor",
+    "role": "Advanced Nurse Practitioner",
+    "qualifications": "MSc Advanced Practice, RGN",
+    "category": "nurse"
+  },
+  {
+    "name": "Mr L. Anderson",
+    "role": "Practice Manager",
+    "qualifications": "",
+    "category": "management"
+  },
+  {
+    "name": "Reception Team",
+    "role": "Patient Services",
+    "qualifications": "Our friendly reception team is here to help you access the right care.",
+    "category": "admin"
+  }
+]
