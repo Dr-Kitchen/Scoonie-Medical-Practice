@@ -1,0 +1,53 @@
+---
+layout: layouts/page.njk
+title: Pharmacy First
+intro: "Your local pharmacy can treat many common conditions — for free, on the NHS, without a GP appointment."
+description: "Pharmacy First lets you get treatment for common conditions at your local pharmacy without needing a GP appointment."
+breadcrumb:
+  - label: Get Help
+    url: /get-help/
+  - label: Pharmacy First
+---
+
+<div class="prose-content max-w-3xl">
+
+  <p>The Pharmacy First Scotland service means your pharmacist can assess and treat a range of everyday conditions on the NHS. You don't need to see a GP first — just walk in to your local pharmacy.</p>
+
+  <h2>Conditions treated under Pharmacy First</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 not-prose">
+    {% set conditions = [
+      "Urinary tract infection (UTI) in women aged 16–65",
+      "Impetigo (skin infection)",
+      "Shingles",
+      "Sinusitis",
+      "Sore throat",
+      "Earache in children aged 1–17",
+      "Infected insect bites",
+      "Minor eye conditions (conjunctivitis)",
+      "Headlice treatment",
+      "Oral thrush"
+    ] %}
+    {% for condition in conditions %}
+    <div class="flex items-start gap-2 bg-brand-light rounded p-3 text-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+      </svg>
+      <span>{{ condition }}</span>
+    </div>
+    {% endfor %}
+  </div>
+
+  <h2>How to use Pharmacy First</h2>
+  <ol>
+    <li>Visit or call your local pharmacy.</li>
+    <li>Tell them you'd like to use the Pharmacy First service.</li>
+    <li>The pharmacist will assess your condition.</li>
+    <li>They may be able to treat you there and then, or refer you to another service if needed.</li>
+  </ol>
+  <p>The service is free of charge on the NHS. You do not need a prescription or referral from us.</p>
+
+  <h2>Find a local pharmacy</h2>
+  <p>Use the <a href="https://www.nhsinform.scot/scotlands-service-directory/pharmacy" rel="noopener noreferrer">NHS Inform pharmacy finder</a> to find a pharmacy near you.</p>
+
+</div>
