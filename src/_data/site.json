@@ -1,13 +1,15 @@
 {
   "name": "Scoonie Medical Practice",
   "address": {
-    "line1": "Cameron Health Centre",
-    "line2": "Methil",
+    "line1": "Leven Health Centre",
+    "line2": "Victoria Road",
     "town": "Leven",
-    "postcode": "KY8 3LG"
+    "county": "Fife",
+    "postcode": "KY8 4ET"
   },
-  "phone": "01592 712800",
-  "email": "scoonie.surgery@nhs.scot",
+  "phone": "01333 432 588",
+  "email": "fife.f21261scoonie@nhs.scot",
+  "prescriptionEmail": "fife.f21261-rx-requests@nhs.scot",
   "url": "https://www.scooniemedical.scot",
   "openingHours": [
     { "day": "Monday", "open": "08:00", "close": "18:00" },

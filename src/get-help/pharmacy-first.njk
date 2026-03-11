@@ -2,7 +2,7 @@
 layout: layouts/page.njk
 title: Pharmacy First
 intro: "Your local pharmacy can treat many common conditions — for free, on the NHS, without a GP appointment."
-description: "Pharmacy First lets you get treatment for common conditions at your local pharmacy without needing a GP appointment."
+description: "Pharmacy First Scotland lets you get treatment for common conditions at your local pharmacy without needing a GP appointment."
 breadcrumb:
   - label: Get Help
     url: /get-help/
@@ -11,24 +11,22 @@ breadcrumb:
 
 <div class="prose-content max-w-3xl">
 
-  <p>The Pharmacy First Scotland service means your pharmacist can assess and treat a range of everyday conditions on the NHS. You don't need to see a GP first — just walk in to your local pharmacy.</p>
+  <p>The Pharmacy First Scotland service means your pharmacist can assess and treat a range of conditions on the NHS. You don't need to see a GP first — just walk in or call your local pharmacy.</p>
 
-  <h2>Conditions treated under Pharmacy First</h2>
+  <h2>Conditions treated under Pharmacy First Scotland</h2>
+  <p>Pharmacists can prescribe treatment for these seven conditions:</p>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 not-prose">
-    {% set conditions = [
+    {% set pharmacyFirstConditions = [
       "Urinary tract infection (UTI) in women aged 16–65",
       "Impetigo (skin infection)",
       "Shingles",
       "Sinusitis",
       "Sore throat",
       "Earache in children aged 1–17",
-      "Infected insect bites",
-      "Minor eye conditions (conjunctivitis)",
-      "Headlice treatment",
-      "Oral thrush"
+      "Infected insect bites"
     ] %}
-    {% for condition in conditions %}
+    {% for condition in pharmacyFirstConditions %}
     <div class="flex items-start gap-2 bg-brand-light rounded p-3 text-sm">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
@@ -38,11 +36,45 @@ breadcrumb:
     {% endfor %}
   </div>
 
+  <h2>Other conditions your pharmacy can help with</h2>
+  <p>Under the NHS Minor Ailment Service, pharmacists can also advise on and supply treatments for many other everyday conditions — for free if you hold a valid exemption certificate, or at a standard prescription charge:</p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 not-prose">
+    {% set minorAilments = [
+      "Athlete's foot",
+      "Allergies and hay fever",
+      "Backache and minor aches and pains",
+      "Cold sores",
+      "Conjunctivitis (minor eye conditions)",
+      "Constipation",
+      "Diarrhoea",
+      "Eczema (mild)",
+      "Head lice",
+      "Indigestion and heartburn",
+      "Mouth ulcers",
+      "Oral thrush",
+      "Period pains",
+      "Threadworms",
+      "Verrucas and warts"
+    ] %}
+    {% for condition in minorAilments %}
+    <div class="flex items-start gap-2 bg-neutral-warm rounded p-3 text-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+      </svg>
+      <span>{{ condition }}</span>
+    </div>
+    {% endfor %}
+  </div>
+
+  <h2>Emergency contraception</h2>
+  <p>Free emergency contraception is available from most pharmacies in Scotland without a prescription or GP appointment. This includes the morning-after pill (up to 72 hours after unprotected sex). Ask your pharmacist in confidence.</p>
+
   <h2>How to use Pharmacy First</h2>
   <ol>
     <li>Visit or call your local pharmacy.</li>
     <li>Tell them you'd like to use the Pharmacy First service.</li>
-    <li>The pharmacist will assess your condition.</li>
+    <li>The pharmacist will assess your condition — they may ask some questions in a private consultation room.</li>
     <li>They may be able to treat you there and then, or refer you to another service if needed.</li>
   </ol>
   <p>The service is free of charge on the NHS. You do not need a prescription or referral from us.</p>

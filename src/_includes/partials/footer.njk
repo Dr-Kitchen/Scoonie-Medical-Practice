@@ -7,7 +7,7 @@
         <h2 class="site-footer__heading">Contact us</h2>
         <address class="not-italic space-y-2 text-sm">
           <p>{{ site.name }}</p>
-          <p>{{ site.address.line1 }}<br>{{ site.address.line2 }}<br>{{ site.address.town }}<br>{{ site.address.postcode }}</p>
+          <p>{{ site.address.line1 }}<br>{{ site.address.line2 }}<br>{{ site.address.town }}<br>{{ site.address.county }}<br>{{ site.address.postcode }}</p>
           <p>
             <a href="tel:{{ site.phone | replace(' ', '') }}">
               Tel: {{ site.phone }}
@@ -60,7 +60,7 @@
     </div>
 
     <div class="pt-6 flex flex-col md:flex-row justify-between items-start gap-4 text-xs text-gray-500">
-      <p>&copy; 2025 {{ site.name }}. Part of NHS Fife.</p>
+      <p>&copy; 2026 {{ site.name }}. Part of NHS Fife.</p>
       <p>Website rebuilt for better patient access.</p>
     </div>
   </div>

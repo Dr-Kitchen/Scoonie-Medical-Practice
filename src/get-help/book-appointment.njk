@@ -2,7 +2,7 @@
 layout: layouts/page.njk
 title: Book an appointment
 intro: "We offer telephone and online appointments with GPs, nurses, and other clinicians."
-description: "Book a GP or nurse appointment at Scoonie Medical Practice — by phone or online via Patient Access."
+description: "Book a GP or nurse appointment at Scoonie Medical Practice in Leven, Fife — by phone or online via Patient Access."
 breadcrumb:
   - label: Get Help
     url: /get-help/
@@ -14,7 +14,7 @@ breadcrumb:
   <h2>How to book</h2>
 
   <h3>By telephone</h3>
-  <p>Call us on <a href="tel:015927128000">{{ site.phone }}</a> from 08:00, Monday to Friday. Our reception team will help you find the most appropriate appointment.</p>
+  <p>Call us on <a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a> from 08:00, Monday to Friday. Our reception team will help you find the most appropriate appointment.</p>
 
   <h3>Online via Patient Access</h3>
   <p>If you are registered with Patient Access, you can book some appointments online at any time.</p>
@@ -29,8 +29,9 @@ breadcrumb:
   <p>We offer:</p>
   <ul>
     <li><strong>Telephone consultations</strong> — a clinician will call you at an agreed time</li>
-    <li><strong>Face-to-face appointments</strong> — at Cameron Health Centre in Methil</li>
+    <li><strong>Face-to-face appointments</strong> — at Leven Health Centre</li>
     <li><strong>On-the-day appointments</strong> — for urgent same-day needs, call us from 08:00</li>
+    <li><strong>NearMe video consultations</strong> — if a clinician invites you to a video appointment, you'll receive a link by text or email. No account or app is needed — just a smartphone, tablet, or computer with a camera.</li>
   </ul>
 
   <h2>Who will I see?</h2>
@@ -39,9 +40,14 @@ breadcrumb:
     <li>A GP</li>
     <li>A practice nurse or advanced nurse practitioner</li>
     <li>A pharmacist</li>
-    <li>A physiotherapist (if applicable)</li>
+    <li>A First Contact Physiotherapist (for musculoskeletal problems — you can book directly without seeing a GP first)</li>
+    <li>A mental health nurse</li>
   </ul>
   <p>Our reception team are trained to ask a few questions to help match you to the right clinician.</p>
+
+  <h2>Home visits</h2>
+  <p>If you are unable to come to the surgery because of illness or disability, we can arrange a home visit. Please call before 11:00 to request one. Home visits are for patients who are genuinely housebound and cannot safely travel to the surgery — they are not an alternative to attending in person.</p>
+  <p>After 11:00, home visits can only be arranged for genuine emergencies.</p>
 
   <h2>Need help sooner?</h2>
   <p>Many conditions can be treated faster without a GP appointment. Consider:</p>

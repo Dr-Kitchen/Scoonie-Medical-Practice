@@ -28,6 +28,9 @@ breadcrumb:
     {% if service.phone %}
     <p class="text-sm mt-1"><a href="tel:{{ service.phone | replace(' ', '') }}" class="text-brand-primary">{{ service.phone }}</a></p>
     {% endif %}
+    {% if service.secondPhone %}
+    <p class="text-sm mt-1">{% if service.secondPhoneLabel %}<span class="text-neutral-mid">{{ service.secondPhoneLabel }}:</span> {% endif %}<a href="tel:{{ service.secondPhone | replace(' ', '') }}" class="text-brand-primary">{{ service.secondPhone }}</a></p>
+    {% endif %}
   </div>
   {% endfor %}
 
