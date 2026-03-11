@@ -1,44 +1,62 @@
 [
   {
-    "name": "Dr A. Smith",
+    "name": "Dr Mark Hilton",
     "role": "GP Partner",
-    "qualifications": "MBChB, MRCGP",
+    "qualifications": "BSc Hons, MBChB (Edinburgh 2003), PhD, MRCGP, DRCOG, DFSRH",
     "category": "gp"
   },
   {
-    "name": "Dr B. Jones",
+    "name": "Dr Emma Richardson",
     "role": "GP Partner",
-    "qualifications": "MBChB, MRCGP, DRCOG",
+    "qualifications": "MBChB (Dundee 1999), MRCGP",
     "category": "gp"
   },
   {
-    "name": "Dr C. Brown",
+    "name": "Dr Christopher Andrew",
+    "role": "GP Partner",
+    "qualifications": "BSc MedSci, MBChB (Manchester 2007), MRCGP",
+    "category": "gp"
+  },
+  {
+    "name": "Dr Rosemary Cook",
+    "role": "GP Partner",
+    "qualifications": "MBChB (Edinburgh 1994)",
+    "category": "gp"
+  },
+  {
+    "name": "Dr Ruth Stevenson",
+    "role": "GP Partner",
+    "qualifications": "BSc MedSci, MBChB (Manchester 2000), MRCGP, DFSRH",
+    "category": "gp"
+  },
+  {
+    "name": "Dr Peter Kitchen",
+    "role": "GP Partner",
+    "qualifications": "MBChB (Edinburgh 2009), MRCGP",
+    "category": "gp"
+  },
+  {
+    "name": "Dr Louise Phillips",
     "role": "Salaried GP",
-    "qualifications": "MBChB, MRCGP",
+    "qualifications": "MBChB, DFFP",
     "category": "gp"
   },
   {
-    "name": "Sister J. Wilson",
-    "role": "Practice Nurse",
-    "qualifications": "RGN, BSc Nursing",
+    "name": "Mental Health Nursing Team",
+    "role": "Mental Health Nurses",
+    "qualifications": "Our mental health nurses offer direct support for patients experiencing mental health difficulties. They work alongside the GP team to provide assessment and ongoing care.",
     "category": "nurse"
   },
   {
-    "name": "Nurse Practitioner K. Taylor",
-    "role": "Advanced Nurse Practitioner",
-    "qualifications": "MSc Advanced Practice, RGN",
+    "name": "Practice Pharmacy Team",
+    "role": "Pharmacists and Pharmacy Technicians",
+    "qualifications": "Our pharmacy team manages medication reviews, prescribing support, and medication queries. You may be asked to speak with a pharmacist as part of your care.",
     "category": "nurse"
   },
   {
-    "name": "Mr L. Anderson",
-    "role": "Practice Manager",
-    "qualifications": "",
-    "category": "management"
-  },
-  {
-    "name": "Reception Team",
+    "name": "Reception and Administration Team",
     "role": "Patient Services",
-    "qualifications": "Our friendly reception team is here to help you access the right care.",
+    "qualifications": "Our friendly admin team are your first point of contact. They are trained to help direct you to the right care and can assist with appointments, prescriptions, and general queries.",
     "category": "admin"
   }
 ]

@@ -1,64 +1,125 @@
 [
   {
-    "name": "Physiotherapy",
-    "description": "Refer yourself for assessment and treatment of musculoskeletal problems — back pain, joint pain, sports injuries, and more.",
-    "howToRefer": "Call Fife Community Physiotherapy or use the online self-referral form.",
+    "name": "Physiotherapy (musculoskeletal)",
+    "description": "Refer yourself for assessment and treatment of musculoskeletal problems — back pain, joint pain, sports injuries, and more. No GP referral needed.",
+    "howToRefer": "Complete the NHS Fife online self-referral form or call the physiotherapy department directly.",
     "link": "https://www.nhsfife.org/services/all-services/physiotherapy/self-referral/"
   },
   {
-    "name": "Mental health (Talking therapies / IAPT)",
-    "description": "Access counselling, cognitive behavioural therapy (CBT), and other talking therapies for anxiety, depression, and stress.",
-    "howToRefer": "Refer yourself online via NHS Fife Psychological Therapies.",
-    "link": "https://www.nhsfife.org/services/all-services/psychology/"
+    "name": "Podiatry / Foot Health",
+    "description": "For conditions affecting your feet and lower limbs, including nail problems, skin conditions, and diabetes-related foot care.",
+    "howToRefer": "Call the NHS Fife Podiatry advice line or complete the self-referral form. The Randolph Wemyss Memorial Hospital clinic can also be contacted directly.",
+    "phone": "01383 518 635",
+    "secondPhone": "01592 712 427",
+    "secondPhoneLabel": "Randolph Wemyss clinic"
   },
   {
-    "name": "Smoking cessation",
-    "description": "Get free NHS support to stop smoking, including nicotine replacement therapy and one-to-one advice.",
-    "howToRefer": "Call the Quit Your Way Fife service or speak to your pharmacist.",
-    "link": "https://www.nhsinform.scot/healthy-living/stopping-smoking/",
-    "phone": "0800 84 84 84"
+    "name": "Mental health (Access Therapies Fife)",
+    "description": "Talking therapies for anxiety, low mood, depression, and stress — including CBT, counselling, and guided self-help. Free on the NHS.",
+    "howToRefer": "Self-refer online, by phone, or via webchat through Access Therapies Fife. You do not need to speak to a GP first.",
+    "link": "https://www.nhsfife.org/services/all-services/psychology/access-therapies-fife/"
   },
   {
-    "name": "Weight management",
-    "description": "Access NHS weight management support, including dietary advice and structured programmes.",
-    "howToRefer": "Speak to your pharmacist or contact Counterweight / NHS Fife dietetics.",
-    "link": "https://www.nhsfife.org/services/all-services/dietetics/"
+    "name": "Pelvic Health Physiotherapy",
+    "description": "Specialist physiotherapy for bladder, bowel, and pelvic floor problems — including incontinence, prolapse, and pelvic pain.",
+    "howToRefer": "Self-refer via NHS Fife. A self-management leaflet is also available online.",
+    "link": "https://www.nhsfife.org/services/all-services/physiotherapy/"
   },
   {
-    "name": "Sexual health",
-    "description": "Confidential sexual health services including STI testing, contraception advice, and treatment.",
-    "howToRefer": "Contact Fife Sexual Health service directly — no GP referral needed.",
+    "name": "Maternity services",
+    "description": "If you think you might be pregnant and would like to book antenatal care, you can contact NHS Fife Maternity Services directly.",
+    "howToRefer": "Refer yourself via the NHS Fife maternity self-referral page or contact the antenatal clinic.",
+    "link": "https://www.nhsfife.org/services/all-services/maternity/"
+  },
+  {
+    "name": "Termination of pregnancy",
+    "description": "Confidential support and referral for termination of pregnancy. You do not need to see a GP first.",
+    "howToRefer": "Contact Women's Choices Scotland or NHS Fife Women's Health Unit for confidential advice and onward referral.",
+    "link": "https://www.nhsfife.org/services/all-services/sexual-health/"
+  },
+  {
+    "name": "Sexual assault support (SARCS)",
+    "description": "The Sexual Assault Referral Centre (SARCS) provides confidential support for anyone who has experienced sexual assault or rape — recent or historical.",
+    "howToRefer": "Call the SARCS 24-hour phone line. No appointment or GP referral is needed.",
+    "phone": "0800 032 6547"
+  },
+  {
+    "name": "Sexual health and contraception",
+    "description": "Confidential sexual health services including STI testing, contraception advice and fitting, and treatment. No GP referral needed.",
+    "howToRefer": "Contact Fife Sexual Health directly by phone or book online. Drop-in sessions are also available.",
     "link": "https://www.nhsfife.org/services/all-services/sexual-health/",
-    "phone": "01592 226800"
+    "phone": "01592 226 800"
   },
   {
-    "name": "Podiatry (foot care)",
-    "description": "For conditions affecting your feet and lower limbs. Self-refer if you have diabetes or a long-term condition.",
-    "howToRefer": "Contact NHS Fife Podiatry directly.",
-    "phone": "01592 226000"
+    "name": "Fife Childhood Immunisation Service",
+    "description": "For queries about childhood vaccinations, schedules, or missed doses — contact the NHS Fife Childhood Immunisation Service directly.",
+    "howToRefer": "Call or email NHS Fife Childhood Immunisation Service. You do not need to go through your GP.",
+    "link": "https://www.nhsfife.org/services/all-services/immunisation/"
+  },
+  {
+    "name": "Bladder and Bowel Service (BABS)",
+    "description": "Specialist support for bladder and bowel problems, including incontinence, constipation, and urgency.",
+    "howToRefer": "Self-refer by phone or email to the NHS Fife Bladder and Bowel Service.",
+    "link": "https://www.nhsfife.org/services/all-services/continence-services/"
+  },
+  {
+    "name": "Virtual Hand Clinic",
+    "description": "Assessment and advice for hand and wrist conditions — including fractures, tendon problems, and trigger finger — without a GP appointment.",
+    "howToRefer": "Refer yourself via the Fife Virtual Hand Clinic website.",
+    "link": "https://www.fifevirtualhandclinic.co.uk/"
+  },
+  {
+    "name": "Smoking cessation (Quit Your Way)",
+    "description": "Free NHS support to help you stop smoking, including one-to-one advice, nicotine replacement therapy, and group sessions.",
+    "howToRefer": "Call Quit Your Way Fife or speak to your pharmacist. Support is free and available to everyone.",
+    "link": "https://www.nhsinform.scot/healthy-living/stopping-smoking/"
+  },
+  {
+    "name": "Working Health Services",
+    "description": "Free occupational health and physiotherapy support for employed patients in Scotland whose health condition is affecting their ability to work.",
+    "howToRefer": "Self-refer by phone. Available to people currently in employment — including part-time and self-employed workers.",
+    "link": "https://www.nhsinform.scot/care-support-and-rights/nhs-services/other-health-services/working-health-services/"
+  },
+  {
+    "name": "Social work (Fife Council)",
+    "description": "For community care, adult support, carer support, and social work assessments.",
+    "howToRefer": "Contact the Fife Council Social Work contact centre directly. No GP referral is needed.",
+    "link": "https://www.fife.gov.uk/services/social-care"
+  },
+  {
+    "name": "Fife Bus (community transport)",
+    "description": "Accessible community transport for patients who have difficulty getting to medical appointments and have no other means of transport.",
+    "howToRefer": "Contact Fife Council to check eligibility and arrange transport to healthcare appointments.",
+    "link": "https://www.fife.gov.uk/services/transport"
+  },
+  {
+    "name": "RVS Community Transport",
+    "description": "Voluntary transport service helping older and disabled people get to medical and other essential appointments.",
+    "howToRefer": "Contact RVS (formerly WRVS) in Fife to arrange transport. A small contribution may be requested.",
+    "link": "https://www.royalvoluntaryservice.org.uk/"
+  },
+  {
+    "name": "Foot Care Fife (voluntary nail-cutting)",
+    "description": "A voluntary service providing basic foot care and nail cutting for eligible patients who are unable to manage this themselves.",
+    "howToRefer": "Call the free helpline to find out if you or someone you care for is eligible.",
+    "phone": "0800 389 6046"
+  },
+  {
+    "name": "Travel vaccinations",
+    "description": "Please note: Scoonie Medical Practice no longer provides travel health services or travel vaccinations. For travel health advice and vaccinations, please contact NHS Fife or a registered travel health clinic.",
+    "howToRefer": "Contact NHS Fife travel health services or use the NHS Inform travel health guide.",
+    "link": "https://www.nhsinform.scot/illnesses-and-conditions/infections-and-poisoning/travel-vaccination/"
+  },
+  {
+    "name": "Urgent dental care",
+    "description": "For urgent dental problems, please do not attend the health centre — we are unable to treat dental conditions. Contact the Fife Dental Help Line for advice and out-of-hours access.",
+    "howToRefer": "Call the Fife Dental Help Line for urgent dental problems outside normal dental practice hours.",
+    "phone": "01592 226 555"
   },
   {
     "name": "Optometry (eye care)",
-    "description": "Get a free NHS eye test at any registered optician. They can also refer you for further treatment if needed.",
-    "howToRefer": "Book directly with any NHS-registered optician.",
-    "link": "https://www.nhsinform.scot/care-support-and-rights/nhs-services/dentists-opticians-and-pharmacists/opticians-and-eye-care/"
-  },
-  {
-    "name": "Speech and language therapy",
-    "description": "Support for adults with communication difficulties, swallowing problems, or voice disorders.",
-    "howToRefer": "Contact NHS Fife Speech and Language Therapy.",
-    "link": "https://www.nhsfife.org/services/all-services/speech-and-language-therapy/"
-  },
-  {
-    "name": "Community nursing (district nursing)",
-    "description": "Nursing care at home for patients who cannot easily attend the surgery — wound care, medication support, and more.",
-    "howToRefer": "Call our practice and we'll arrange a referral to the district nursing team.",
-    "phone": "{{ site.phone }}"
-  },
-  {
-    "name": "Occupational therapy",
-    "description": "Support to help you manage everyday activities if you have a long-term health condition or disability.",
-    "howToRefer": "Contact Fife Council Social Work for community OT, or NHS Fife for clinical OT.",
-    "link": "https://www.nhsfife.org/services/all-services/occupational-therapy/"
+    "description": "For eye problems, changes to your vision, or eye health queries, contact an optician first. They can examine your eyes and refer you if needed — no GP referral required. For certain conditions, visit Eyes.Scot.",
+    "howToRefer": "Book directly with any NHS-registered optician. Use Eyes.Scot for guidance on common eye conditions and headaches.",
+    "link": "https://www.eyes.scot/"
   }
 ]
