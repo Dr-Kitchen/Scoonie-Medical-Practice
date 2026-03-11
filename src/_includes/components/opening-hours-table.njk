@@ -1,0 +1,25 @@
+{% macro openingHoursTable(hours) %}
+<table class="hours-table" aria-label="Surgery opening hours">
+  <caption class="sr-only">Opening hours for {{ site.name }}</caption>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Day</th>
+      <th scope="col">Hours</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in hours %}
+    <tr data-day="{{ row.day }}">
+      <td class="font-medium w-1/2">{{ row.day }}</td>
+      <td>
+        {% if row.open %}
+          {{ row.open }} – {{ row.close }}
+        {% else %}
+          <span class="text-neutral-mid">Closed</span>
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endmacro %}

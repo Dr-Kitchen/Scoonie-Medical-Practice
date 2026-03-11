@@ -1,0 +1,12 @@
+{% macro serviceCard(title, description, link, phone) %}
+<div class="service-card">
+  <h3 class="service-card__title">{{ title }}</h3>
+  <p class="service-card__desc">{{ description }}</p>
+  {% if link %}
+  <a href="{{ link }}" class="text-brand-primary text-sm font-medium mt-2 inline-block">Learn more →</a>
+  {% endif %}
+  {% if phone %}
+  <p class="text-sm mt-2"><a href="tel:{{ phone | replace(' ', '') }}" class="text-brand-primary font-medium">{{ phone }}</a></p>
+  {% endif %}
+</div>
+{% endmacro %}

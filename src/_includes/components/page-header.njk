@@ -1,0 +1,25 @@
+{% macro pageHeader(title, intro, breadcrumb) %}
+<div class="page-header">
+  <div class="max-w-6xl mx-auto px-4">
+    {% if breadcrumb %}
+    <nav aria-label="Breadcrumb" class="page-header__breadcrumb mb-2">
+      <ol class="flex flex-wrap items-center gap-1 list-none text-sm">
+        <li><a href="/" class="hover:text-brand-primary no-underline">Home</a></li>
+        {% for crumb in breadcrumb %}
+        <li aria-hidden="true" class="mx-1">/</li>
+        {% if loop.last %}
+        <li aria-current="page" class="text-neutral-dark">{{ crumb.label }}</li>
+        {% else %}
+        <li><a href="{{ crumb.url }}" class="hover:text-brand-primary no-underline">{{ crumb.label }}</a></li>
+        {% endif %}
+        {% endfor %}
+      </ol>
+    </nav>
+    {% endif %}
+    <h1 class="page-header__title">{{ title }}</h1>
+    {% if intro %}
+    <p class="page-header__intro">{{ intro }}</p>
+    {% endif %}
+  </div>
+</div>
+{% endmacro %}
