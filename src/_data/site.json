@@ -20,6 +20,22 @@
     { "day": "Saturday", "open": null, "close": null },
     { "day": "Sunday", "open": null, "close": null }
   ],
+  "plannedClosures": [
+    { "date": "25 December 2025", "reason": "Christmas Day" },
+    { "date": "26 December 2025", "reason": "Boxing Day" },
+    { "date": "1 January 2026", "reason": "New Year's Day" },
+    { "date": "2 January 2026", "reason": "2 January holiday" },
+    { "date": "3 April 2026", "reason": "Good Friday" },
+    { "date": "6 April 2026", "reason": "Easter Monday" },
+    { "date": "4 May 2026", "reason": "Early May bank holiday" },
+    { "date": "8 September 2026", "reason": "Protected Learning Time", "details": "Practice closes at 1:00pm" },
+    { "date": "5 October 2026", "reason": "Autumn holiday" },
+    { "date": "18 November 2026", "reason": "Protected Learning Time", "details": "Practice closes at 1:00pm" },
+    { "date": "25 December 2026", "reason": "Christmas Day" },
+    { "date": "28 December 2026", "reason": "Christmas Day (substitute)" },
+    { "date": "1 January 2027", "reason": "New Year's Day" },
+    { "date": "4 January 2027", "reason": "2 January holiday (substitute)" }
+  ],
   "outOfHours": "NHS 24 on 111",
   "bslLink": "https://contactscotland-bsl.org/",
   "nhsInformScotland": "https://www.nhsinform.scot/",

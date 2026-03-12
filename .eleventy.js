@@ -26,6 +26,39 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  // CMS-managed collections
+  eleventyConfig.addCollection("services", function(api) {
+    return api.getFilteredByGlob("src/content/services/*.md")
+      .filter(item => item.data.active !== false)
+      .sort((a, b) => (a.data.sort_order || 10) - (b.data.sort_order || 10));
+  });
+
+  eleventyConfig.addCollection("staff", function(api) {
+    return api.getFilteredByGlob("src/content/staff/*.md")
+      .filter(item => item.data.active !== false)
+      .sort((a, b) => (a.data.sort_order || 10) - (b.data.sort_order || 10));
+  });
+
+  eleventyConfig.addCollection("news", function(api) {
+    return api.getFilteredByGlob("src/content/news/*.md")
+      .sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+  });
+
+  eleventyConfig.addCollection("alerts", function(api) {
+    return api.getFilteredByGlob("src/content/alerts/*.md");
+  });
+
+  // Filter: returns only currently active alerts, respecting optional date range
+  eleventyConfig.addFilter("activeAlerts", function(alerts) {
+    const now = new Date();
+    return (alerts || []).filter(alert => {
+      if (alert.data.active === false) return false;
+      if (alert.data.start_date && new Date(alert.data.start_date) > now) return false;
+      if (alert.data.end_date && new Date(alert.data.end_date) < now) return false;
+      return true;
+    });
+  });
+
   return {
     templateFormats: ["md", "njk", "html"],
     markdownTemplateEngine: "njk",
