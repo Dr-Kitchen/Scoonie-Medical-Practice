@@ -24,6 +24,16 @@ description: "Scoonie Medical Practice — NHS GP surgery at Leven Health Centre
   </div>
 </section>
 
+{# ── CARE NAVIGATOR ───────────────────────────────────────────────────────── #}
+<section class="py-10 px-4 bg-brand-light" aria-labelledby="care-nav-heading">
+  <div class="max-w-3xl mx-auto">
+    <h2 id="care-nav-heading" class="text-xl font-bold text-neutral-dark mb-2">Not sure where to start?</h2>
+    <p class="text-neutral-mid mb-6">Answer a quick question and we'll point you to the right service.</p>
+    <div id="care-navigator" aria-label="Care navigator tool"></div>
+    <p class="text-xs text-neutral-mid mt-4">This is for guidance only. If in doubt, call us on <a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a> or NHS 24 on <a href="tel:111">111</a>.</p>
+  </div>
+</section>
+
 {# ── QUICK ACTIONS ─────────────────────────────────────────────────────────── #}
 <section class="py-10 px-4 bg-white" aria-labelledby="quick-actions-heading">
   <div class="max-w-6xl mx-auto">
@@ -89,6 +99,51 @@ description: "Scoonie Medical Practice — NHS GP surgery at Leven Health Centre
   </div>
 </section>
 
+{# ── NEWS TEASER ───────────────────────────────────────────────────────────── #}
+{% set latestNews = collections.news | sort(true, false, 'date') %}
+{% if latestNews.length %}
+<section class="news-teaser" aria-labelledby="news-heading">
+  <div class="max-w-6xl mx-auto">
+    <h2 id="news-heading" class="text-xl font-bold text-neutral-dark mb-4">Latest from the practice</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+      {% for post in latestNews | head(2) %}
+      <div class="news-teaser__item">
+        <p class="text-xs text-neutral-mid mb-1">{{ post.date | readableDate }}</p>
+        <h3 class="text-base font-semibold text-neutral-dark mb-1">
+          <a href="{{ post.url }}" class="hover:text-brand-primary no-underline text-neutral-dark">{{ post.data.title }}</a>
+        </h3>
+        {% if post.data.summary %}
+        <p class="text-sm text-neutral-mid leading-relaxed">{{ post.data.summary }}</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    <a href="/about/news/" class="text-brand-primary text-sm font-medium">See all news →</a>
+  </div>
+</section>
+{% endif %}
+
+{# ── CAMPAIGNS ─────────────────────────────────────────────────────────────── #}
+{% set activeCampaigns = collections.campaigns %}
+{% if activeCampaigns and activeCampaigns.length %}
+<section class="py-8 px-4 bg-white" aria-labelledby="campaigns-heading">
+  <div class="max-w-6xl mx-auto">
+    <h2 id="campaigns-heading" class="text-xl font-bold text-neutral-dark mb-4">Health campaigns</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {% for campaign in activeCampaigns %}
+      <div class="campaign-card">
+        <h3 class="font-semibold text-neutral-dark mb-1">{{ campaign.data.title }}</h3>
+        <p class="text-sm text-neutral-mid mb-3">{{ campaign.content | safe }}</p>
+        {% if campaign.data.link_url %}
+        <a href="{{ campaign.data.link_url }}" class="text-brand-primary text-sm font-medium">{{ campaign.data.link_text | default('Find out more') }} →</a>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
 {# ── OPENING HOURS ─────────────────────────────────────────────────────────── #}
 <section class="py-8 px-4 bg-neutral-warm" aria-labelledby="hours-heading">
   <div class="max-w-6xl mx-auto">
@@ -142,10 +197,10 @@ description: "Scoonie Medical Practice — NHS GP surgery at Leven Health Centre
   </div>
 </section>
 
-{# ── NOT SURE WHAT YOU NEED ─────────────────────────────────────────────────── #}
+{# ── NOT SURE WHAT YOU NEED — SIGNPOSTING ─────────────────────────────────── #}
 <section class="signpost-section" aria-labelledby="signpost-heading">
   <div class="max-w-6xl mx-auto">
-    <h2 id="signpost-heading" class="text-xl font-bold text-neutral-dark mb-2">Not sure what you need?</h2>
+    <h2 id="signpost-heading" class="text-xl font-bold text-neutral-dark mb-2">Helpful resources</h2>
     <p class="text-neutral-mid mb-6 max-w-2xl">Many conditions can be treated without a GP appointment. These services might be faster and easier for you.</p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -168,6 +223,15 @@ description: "Scoonie Medical Practice — NHS GP surgery at Leven Health Centre
         <a href="https://www.nhsinform.scot/" rel="noopener noreferrer" class="text-brand-primary text-sm font-medium mt-3 inline-block">Visit NHS Inform →</a>
       </div>
 
+    </div>
+
+    <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+      <a href="https://www.nhsinform.scot/illnesses-and-conditions/" rel="noopener noreferrer" class="text-sm bg-white border border-gray-200 rounded p-3 text-center text-neutral-dark hover:border-brand-primary hover:text-brand-primary no-underline transition-colors">Health A-Z</a>
+      <a href="https://www.nhsinform.scot/healthy-living/" rel="noopener noreferrer" class="text-sm bg-white border border-gray-200 rounded p-3 text-center text-neutral-dark hover:border-brand-primary hover:text-brand-primary no-underline transition-colors">Healthy living</a>
+      <a href="https://www.nhsinform.scot/care-support-and-rights/mental-health/" rel="noopener noreferrer" class="text-sm bg-white border border-gray-200 rounded p-3 text-center text-neutral-dark hover:border-brand-primary hover:text-brand-primary no-underline transition-colors">Mental health</a>
+      <a href="https://www.nhsinform.scot/healthy-living/screening/" rel="noopener noreferrer" class="text-sm bg-white border border-gray-200 rounded p-3 text-center text-neutral-dark hover:border-brand-primary hover:text-brand-primary no-underline transition-colors">Screening</a>
+      <a href="https://www.nhsinform.scot/campaigns/managing-your-long-term-condition/" rel="noopener noreferrer" class="text-sm bg-white border border-gray-200 rounded p-3 text-center text-neutral-dark hover:border-brand-primary hover:text-brand-primary no-underline transition-colors">Long-term conditions</a>
+      <a href="https://www.nhsinform.scot/translations/" rel="noopener noreferrer" class="text-sm bg-white border border-gray-200 rounded p-3 text-center text-neutral-dark hover:border-brand-primary hover:text-brand-primary no-underline transition-colors">Other languages</a>
     </div>
   </div>
 </section>

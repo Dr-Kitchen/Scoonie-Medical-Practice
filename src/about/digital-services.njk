@@ -1,0 +1,52 @@
+---
+layout: layouts/page.njk
+title: Using our services online
+intro: "Find out what you can do online and how to get the most from digital NHS services."
+description: "Digital services at Scoonie Medical Practice — Patient Access, NearMe video consultations, the NHS App, and what you can do on this website."
+breadcrumb:
+  - label: About us
+    url: /about/
+  - label: Digital services
+---
+
+<div class="prose-content max-w-3xl">
+
+  <h2>Patient Access</h2>
+  <p><a href="{{ site.patientAccess }}" rel="noopener noreferrer">Patient Access</a> is a secure online portal that lets you manage parts of your healthcare from home.</p>
+  <h3>What you can do</h3>
+  <ul>
+    <li>Order repeat prescriptions</li>
+    <li>View a summary of your medical record</li>
+    <li>View test results</li>
+  </ul>
+  <h3>What you cannot do</h3>
+  <ul>
+    <li><strong>Book appointments</strong> — online appointment booking is not available at Scoonie Medical Practice. Please call us on <a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a> to book.</li>
+  </ul>
+  <h3>How to register</h3>
+  <p>Visit <a href="{{ site.patientAccess }}" rel="noopener noreferrer">patientaccess.com</a> and follow the registration steps. You'll need your NHS number and a form of ID. If you need help registering, ask at reception.</p>
+
+  <h2>NearMe video consultations</h2>
+  <p>NearMe lets you have a video consultation with a clinician from your home. It is used when a clinician invites you to a video appointment — it is not a walk-in service.</p>
+  <ul>
+    <li>Join at <a href="https://nhsattend.vc/scoonie-medical-practice" rel="noopener noreferrer">nhsattend.vc/scoonie-medical-practice</a></li>
+    <li>No app, account, or download needed</li>
+    <li>Use the latest Safari, Chrome, or Edge</li>
+    <li>Check your camera and microphone beforehand</li>
+  </ul>
+
+  <h2>This website</h2>
+  <p>On this site you can:</p>
+  <ul>
+    <li>Find information about our services and how to access them</li>
+    <li>Browse self-referral routes to NHS services</li>
+    <li>Download forms and documents</li>
+    <li>Read the latest news and updates from the practice</li>
+    <li>Find contact details and opening hours</li>
+  </ul>
+  <p>This website does not collect patient data and cannot be used to book appointments or send medical information.</p>
+
+  <h2>NHS App</h2>
+  <p>The <a href="https://www.nhsinform.scot/nhs-app/" rel="noopener noreferrer">NHS App</a> provides access to a range of NHS services across Scotland, including viewing your GP health records and managing appointments at hospitals. Download it from the App Store or Google Play.</p>
+
+</div>

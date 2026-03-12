@@ -37,6 +37,12 @@
 }
 
 @layer components {
+  /* Brand bar — NHS-style thin accent stripe */
+  .brand-bar {
+    @apply w-full bg-brand-primary;
+    height: 4px;
+  }
+
   /* Skip to content */
   .skip-link {
     @apply absolute -top-full left-4 z-50 bg-brand-primary text-white px-4 py-2 rounded-b font-semibold;
@@ -53,6 +59,44 @@
   .alert-banner--info { @apply bg-brand-primary; }
   .alert-banner--warning { @apply bg-alert-warning; }
   .alert-banner--urgent { @apply bg-alert-urgent; }
+
+  /* Open/closed status indicator */
+  .status-indicator {
+    @apply text-xs font-semibold inline-flex items-center gap-1.5 no-underline;
+  }
+  .status-indicator::before {
+    content: '';
+    @apply w-2 h-2 rounded-full inline-block;
+  }
+  .status-indicator--open {
+    @apply text-green-700;
+  }
+  .status-indicator--open::before {
+    @apply bg-green-500;
+  }
+  .status-indicator--closing {
+    @apply text-amber-700;
+  }
+  .status-indicator--closing::before {
+    @apply bg-amber-500;
+  }
+  .status-indicator--closed {
+    @apply text-red-700;
+  }
+  .status-indicator--closed::before {
+    @apply bg-red-500;
+  }
+
+  /* Mobile floating call button */
+  .mobile-call-btn {
+    @apply fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-lg no-underline;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  .mobile-call-btn:hover,
+  .mobile-call-btn:active {
+    @apply bg-brand-dark text-white;
+    transform: scale(1.05);
+  }
 
   /* Header */
   .site-header {
@@ -234,6 +278,37 @@
   /* Signposting section */
   .signpost-section {
     @apply bg-neutral-warm py-10 px-4;
+  }
+
+  /* Care navigator */
+  .care-nav__option {
+    @apply flex items-center gap-3 w-full text-left bg-white border border-gray-200 rounded-lg p-4 hover:border-brand-primary hover:bg-brand-light transition-colors cursor-pointer no-underline text-neutral-dark font-medium;
+    min-height: 48px;
+  }
+  .care-nav__option:focus-visible {
+    @apply ring-2 ring-brand-primary ring-offset-2;
+    outline: none;
+  }
+  .care-nav__result {
+    @apply bg-white border border-gray-200 rounded-lg p-5;
+    animation: fadeIn 0.2s ease-in;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* News teaser */
+  .news-teaser {
+    @apply py-8 px-4 bg-neutral-warm;
+  }
+  .news-teaser__item {
+    @apply bg-white border border-gray-200 rounded-lg p-4;
+  }
+
+  /* Campaign card */
+  .campaign-card {
+    @apply bg-white border-2 border-brand-primary rounded-lg p-5;
   }
 
   /* Footer */
