@@ -1,8 +1,8 @@
 ---
 layout: layouts/page.njk
 title: Book an appointment
-intro: "We offer telephone and online appointments with GPs, nurses, and other clinicians."
-description: "Book a GP or nurse appointment at Scoonie Medical Practice in Leven, Fife — by phone or online via Patient Access."
+intro: "Most appointments are booked by telephone. Our reception team will help you find the right clinician."
+description: "Book an appointment at Scoonie Medical Practice in Leven, Fife — call us on 01333 432 588, Monday to Friday from 08:00."
 breadcrumb:
   - label: Get Help
     url: /get-help/
@@ -14,16 +14,11 @@ breadcrumb:
   <h2>How to book</h2>
 
   <h3>By telephone</h3>
-  <p>Call us on <a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a> from 08:00, Monday to Friday. Our reception team will help you find the most appropriate appointment.</p>
+  <p>Call us on <a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a> from 08:00, Monday to Friday. Our reception team will ask a few brief questions to help match you to the right clinician and appointment type.</p>
 
-  <h3>Online via Patient Access</h3>
-  <p>If you are registered with Patient Access, you can book some appointments online at any time.</p>
-  <a href="{{ site.patientAccess }}" class="btn btn--primary inline-flex mb-6" rel="noopener noreferrer">
-    Go to Patient Access
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
-    </svg>
-  </a>
+  <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6 not-prose">
+    <p class="text-sm text-neutral-dark"><strong>Note:</strong> Some services at Leven Health Centre — including the treatment room (CTAC) and phlebotomy — are provided by NHS Fife staff and must be booked via <strong>NHS Fife Reception</strong> at the health centre, not via our telephone number above. See the <a href="/about/our-team/" class="text-brand-primary underline">Our team</a> page for details.</p>
+  </div>
 
   <h2>Types of appointment</h2>
   <p>We offer:</p>
@@ -38,23 +33,20 @@ breadcrumb:
   <p>Depending on your needs, you may be offered an appointment with:</p>
   <ul>
     <li><strong>GP</strong> — for complex or ongoing health concerns</li>
-    <li><strong>Practice Nurse or Advanced Nurse Practitioner</strong> — for minor illness, wound care, immunisations, and health checks</li>
-    <li><strong>Mental Health Nurses</strong> (Seonad or Andrew) — for mental health assessment and support; bookable directly via reception</li>
-    <li><strong>Diabetic Nurse Specialists</strong> — for diabetes management and review</li>
-    <li><strong>LTC Nurses</strong> — for long-term condition clinics (asthma, COPD, hypertension, and more)</li>
-    <li><strong>Treatment Room Nurses / CTAC</strong> — for dressings, blood tests, minor procedures, and clinical admin</li>
-    <li><strong>Phlebotomists</strong> — for blood tests</li>
+    <li><strong>Nurse Practitioner or Advanced Nurse Practitioner</strong> — for many acute conditions including infections, earache, skin complaints, UTIs, and asthma/COPD flares</li>
+    <li><strong>Mental Health Nurse</strong> (Seonad or Andrew) — for mental health assessment and support; bookable directly without a GP referral</li>
+    <li><strong>Primary Care Nurse</strong> — for chronic disease clinics, smears, warfarin/INR management, health screening</li>
     <li><strong>Practice Pharmacist</strong> — for medication queries and clinical reviews</li>
-    <li><strong>First Contact Physiotherapist</strong> — for musculoskeletal problems; bookable directly without seeing a GP first</li>
+    <li><strong>First Contact Physiotherapist</strong> — for musculoskeletal problems; bookable directly without a GP referral</li>
   </ul>
-  <p>Our reception team are trained to ask a few questions to help match you to the right clinician.</p>
+  <p>Treatment room procedures (wound care, ear irrigation, B12 injections, suture removal) and blood tests (phlebotomy) are available via <strong>NHS Fife CTAC</strong> — contact NHS Fife Reception at Leven Health Centre to book these.</p>
 
   <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 not-prose">
-    <p class="text-sm text-neutral-dark"><strong>One problem per consultation.</strong> To help us give every patient the time and attention they need, please raise one problem per appointment. If you have multiple concerns, please book a longer appointment or arrange separate appointments.</p>
+    <p class="text-sm text-neutral-dark"><strong>One problem per consultation.</strong> To give every patient the time they need, please raise one problem per appointment. If you have multiple concerns, ask our reception team about a longer or additional appointment.</p>
   </div>
 
   <h2>Home visits</h2>
-  <p>If you are unable to come to the surgery because of illness or disability, we can arrange a home visit. Please call before 11:00 to request one. Home visits are for patients who are genuinely housebound and cannot safely travel to the surgery — they are not an alternative to attending in person.</p>
+  <p>If you are unable to attend the surgery because of illness or disability, we can arrange a home visit. Please call before 11:00 to request one. Home visits are for patients who are genuinely housebound and unable to travel safely — they are not an alternative to attending in person.</p>
   <p>After 11:00, home visits can only be arranged for genuine emergencies.</p>
 
   <h2>Need help sooner?</h2>

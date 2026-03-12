@@ -42,27 +42,81 @@
     "category": "gp"
   },
   {
-    "name": "Seonad",
+    "name": "John Kenny",
+    "role": "Nurse Practitioner",
+    "qualifications": "Sees and treats a wide range of acute conditions including coughs, chest infections, sore throats, headaches, earache, muscle strains, skin complaints, urinary infections, and acute asthma and COPD flares.",
+    "category": "anp"
+  },
+  {
+    "name": "Ann Fox-Begley",
+    "role": "Nurse Practitioner",
+    "qualifications": "Sees and treats a wide range of acute conditions including coughs, chest infections, sore throats, headaches, earache, muscle strains, skin complaints, urinary infections, and acute asthma and COPD flares.",
+    "category": "anp"
+  },
+  {
+    "name": "Anna Baxter",
+    "role": "Advanced Nurse Practitioner",
+    "qualifications": "Sees and treats a wide range of acute and complex conditions. ANPs have extended prescribing rights and can manage many conditions independently.",
+    "category": "anp"
+  },
+  {
+    "name": "Seonad Parker",
     "role": "Mental Health Nurse",
-    "qualifications": "Available for direct booking via reception. Our mental health nurses provide assessment and support for patients experiencing mental health difficulties.",
-    "category": "nurse"
+    "qualifications": "Known as Shona. Sees patients aged 18+ for low mood, anxiety, depression, bereavement, sleep difficulties, stress, relationship difficulties, and emotional trauma. Book via Scoonie Reception.",
+    "category": "mental"
   },
   {
-    "name": "Andrew",
-    "role": "Mental Health Nurse",
-    "qualifications": "Available for direct booking via reception.",
-    "category": "nurse"
+    "name": "Andrew Paterson",
+    "role": "Mental Health Triage Nurse",
+    "qualifications": "Handles on-the-day mental health callbacks and triage, helping to connect patients with the right level of mental health support. Book via Scoonie Reception.",
+    "category": "mental"
   },
   {
-    "name": "Practice Pharmacy Team",
-    "role": "Pharmacists and Pharmacy Technicians",
-    "qualifications": "Our pharmacy team manages medication reviews, prescribing support, and medication queries. You may be asked to speak with a pharmacist as part of your care.",
-    "category": "nurse"
+    "name": "Michelle Ferguson",
+    "role": "Primary Care Nurse",
+    "qualifications": "Provides smears, warfarin/INR management, chronic disease clinics, health screening, and lifestyle advice. Book via Scoonie Reception.",
+    "category": "pn"
   },
   {
-    "name": "Reception and Administration Team",
-    "role": "Patient Services",
-    "qualifications": "Our friendly admin team are your first point of contact. They are trained to help direct you to the right care and can assist with appointments, prescriptions, and general queries.",
+    "name": "Nicola Thomson",
+    "role": "Primary Care Nurse",
+    "qualifications": "Provides smears, warfarin/INR management, chronic disease clinics, health screening, and lifestyle advice. Book via Scoonie Reception.",
+    "category": "pn"
+  },
+  {
+    "name": "Robyn",
+    "role": "Primary Care Nurse",
+    "qualifications": "Provides smears, warfarin/INR management, chronic disease clinics, health screening, and lifestyle advice. Book via Scoonie Reception.",
+    "category": "pn"
+  },
+  {
+    "name": "David Wilson",
+    "role": "Practice Pharmacist",
+    "qualifications": "Reviews medications, advises GPs on prescribing, and consults directly with patients on medication queries and medication reviews. Works alongside NHS Fife Partnership Pharmacists and Pharmacy Technicians.",
+    "category": "pharmacy"
+  },
+  {
+    "name": "Kim Morris-Don",
+    "role": "CTAC Nurse (Treatment Room)",
+    "qualifications": "Provides wound care, ear irrigation, B12 injections, suture removal, and other treatment room procedures. Book via NHS Fife Reception at Leven Health Centre.",
+    "category": "ctac"
+  },
+  {
+    "name": "Laura Donovan",
+    "role": "CTAC Nurse (Treatment Room)",
+    "qualifications": "Provides wound care, ear irrigation, B12 injections, suture removal, and other treatment room procedures. Book via NHS Fife Reception at Leven Health Centre.",
+    "category": "ctac"
+  },
+  {
+    "name": "Julie Bullions",
+    "role": "Practice Manager",
+    "qualifications": "Responsible for the day-to-day management and administration of the practice.",
+    "category": "admin"
+  },
+  {
+    "name": "Marion Clacken",
+    "role": "Practice Manager",
+    "qualifications": "Responsible for the day-to-day management and administration of the practice.",
     "category": "admin"
   }
 ]
