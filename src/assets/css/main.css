@@ -31,15 +31,15 @@
   }
 
   :focus-visible {
-    outline: 3px solid #005eb8;
+    outline: 3px solid #2D3A6E;
     outline-offset: 2px;
   }
 }
 
 @layer components {
-  /* Brand bar — NHS-style thin accent stripe */
+  /* Brand bar — accent stripe */
   .brand-bar {
-    @apply w-full bg-brand-primary;
+    @apply w-full bg-brand-accent;
     height: 4px;
   }
 
