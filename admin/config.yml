@@ -5,106 +5,182 @@ backend:
 media_folder: "src/assets/images"
 public_folder: "/assets/images"
 
-collections:
-  # Alert Banner
-  - name: "settings"
-    label: "Site Settings"
-    files:
-      - name: "alert"
-        label: "Alert Banner"
-        file: "src/_data/alert.json"
-        fields:
-          - label: "Show alert banner"
-            name: "active"
-            widget: "boolean"
-            default: false
-          - label: "Severity"
-            name: "severity"
-            widget: "select"
-            options:
-              - { label: "Information (blue)", value: "info" }
-              - { label: "Warning (amber)", value: "warning" }
-              - { label: "Urgent (red)", value: "urgent" }
-            default: "info"
-          - label: "Banner title (optional)"
-            name: "title"
-            widget: "string"
-            required: false
-          - label: "Banner message"
-            name: "body"
-            widget: "text"
+publish_mode: editorial_workflow
 
-  # News Posts
-  - name: "news"
-    label: "News"
-    folder: "src/news"
+collections:
+
+  - name: alerts
+    label: "Alerts & Notices"
+    label_singular: "Alert"
+    folder: src/content/alerts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { name: title, label: Title, widget: string,
+          hint: "Short headline, e.g. 'Closed for Protected Learning Time'" }
+      - name: severity
+        label: Severity
+        widget: select
+        options:
+          - { label: "Information (blue banner)", value: info }
+          - { label: "Warning (amber banner)", value: warning }
+          - { label: "Urgent (red banner)", value: urgent }
+        default: info
+      - { name: active, label: Active, widget: boolean, default: true }
+      - { name: start_date, label: "Start Date", widget: datetime, required: false,
+          hint: "Leave blank to show the alert immediately" }
+      - { name: end_date, label: "End Date", widget: datetime, required: false,
+          hint: "Leave blank for no automatic expiry" }
+      - name: body
+        label: Message
+        widget: markdown
+        hint: "The text displayed on the banner. Keep it concise."
+
+  - name: services
+    label: "Self-Referral Services"
+    label_singular: "Service"
+    folder: src/content/services
     create: true
     slug: "{{slug}}"
+    summary: "{{title}} ({{category}})"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
-      - label: "Category"
-        name: "category"
-        widget: "select"
+      - { name: title, label: "Service Name", widget: string }
+      - name: category
+        label: Category
+        widget: select
         options:
-          - "practice news"
-          - "service update"
-          - "health campaign"
-          - "staff news"
+          - { label: "Physical Health", value: physical }
+          - { label: "Mental Health & Wellbeing", value: mental }
+          - { label: "Sexual & Reproductive Health", value: sexual }
+          - { label: "Children & Families", value: children }
+          - { label: "Travel & Vaccinations", value: travel }
+          - { label: "Other Services", value: other }
+      - { name: sort_order, label: "Sort Order", widget: number, default: 10,
+          hint: "Lower numbers appear first within the category (e.g. 1 = first, 10 = default)" }
+      - { name: active, label: Active, widget: boolean, default: true,
+          hint: "Untick to hide this service without deleting it" }
+      - { name: phone, label: "Phone Number", widget: string, required: false }
+      - { name: second_phone, label: "Second Phone Number", widget: string, required: false }
+      - { name: second_phone_label, label: "Second Phone Label", widget: string, required: false,
+          hint: "e.g. 'Randolph Wemyss Memorial Hospital'" }
+      - { name: email, label: Email, widget: string, required: false }
+      - { name: website, label: "Website URL", widget: string, required: false,
+          hint: "Full URL including https://" }
+      - { name: booking_note, label: "How to Access", widget: string, required: false,
+          hint: "e.g. 'Book via Scoonie Reception on 01333 432 588' or 'Self-refer via NHS Fife website'" }
+      - name: body
+        label: Description
+        widget: markdown
+        hint: "What the service does and who it is for."
+
+  - name: staff
+    label: Staff
+    label_singular: "Staff Member"
+    folder: src/content/staff
+    create: true
+    slug: "{{slug}}"
+    summary: "{{name}} — {{role}}"
+    fields:
+      - { name: name, label: Name, widget: string }
+      - { name: role, label: "Role / Title", widget: string }
+      - name: team
+        label: Team
+        widget: select
+        options:
+          - { label: "GP Partners", value: gp_partners }
+          - { label: "Salaried GPs", value: salaried_gps }
+          - { label: "Nurse Practitioners", value: nurse_practitioners }
+          - { label: "Mental Health", value: mental_health }
+          - { label: "Practice Nurses", value: practice_nurses }
+          - { label: "Treatment Room (CTAC)", value: ctac }
+          - { label: Pharmacy, value: pharmacy }
+          - { label: Physiotherapy, value: physio }
+          - { label: "Practice Management", value: management }
+          - { label: Administration, value: admin }
+      - { name: qualifications, label: Qualifications, widget: string, required: false,
+          hint: "Degrees and professional qualifications" }
+      - { name: sort_order, label: "Sort Order", widget: number, default: 10,
+          hint: "Controls order within team section — lower = appears first" }
+      - { name: active, label: "Currently Active", widget: boolean, default: true,
+          hint: "Untick if this person has left or is on extended leave" }
+      - name: booking_via
+        label: "Book Via"
+        widget: select
         required: false
-      - { label: "Summary (shown in news list)", name: "description", widget: "text", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/page.njk" }
-      - { label: "Tags", name: "tags", widget: "hidden", default: "news" }
+        hint: "Which reception desk handles bookings for this person"
+        options:
+          - { label: "Scoonie Reception (01333 432 588)", value: scoonie }
+          - { label: "NHS Fife Reception (at Leven Health Centre)", value: nhs_fife }
+          - { label: "Not directly bookable", value: none }
+      - name: body
+        label: "Additional Description"
+        widget: markdown
+        required: false
+        hint: "Optional extra information shown on the team card"
 
-  # Team Members
-  - name: "team"
-    label: "Our Team"
-    files:
-      - name: "team"
-        label: "Team Members"
-        file: "src/_data/team.json"
-        fields:
-          - label: "Team members"
-            name: "root"
-            widget: "list"
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Role", name: "role", widget: "string" }
-              - { label: "Qualifications", name: "qualifications", widget: "string", required: false }
-              - label: "Category"
-                name: "category"
-                widget: "select"
-                options:
-                  - { label: "GP", value: "gp" }
-                  - { label: "Nurse", value: "nurse" }
-                  - { label: "Management", value: "management" }
-                  - { label: "Admin / Reception", value: "admin" }
+  - name: news
+    label: "News & Updates"
+    label_singular: "News Post"
+    folder: src/content/news
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} ({{date}})"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: date, label: Date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+      - name: category
+        label: Category
+        widget: select
+        options:
+          - { label: "Practice News", value: practice_news }
+          - { label: "Service Update", value: service_update }
+          - { label: "Health Campaign", value: health_campaign }
+      - { name: summary, label: Summary, widget: text,
+          hint: "1-2 sentences shown on the news listing page. Not shown on the article itself." }
+      - name: body
+        label: "Full Article"
+        widget: markdown
 
-  # Opening Hours
-  - name: "opening_hours"
-    label: "Opening Hours"
+  - name: settings
+    label: "Site Settings"
     files:
-      - name: "hours"
-        label: "Opening Hours"
-        file: "src/_data/site.json"
+      - name: practice_info
+        label: "Practice Information & Opening Hours"
+        file: src/_data/site.json
         fields:
-          - { label: "Practice name", name: "name", widget: "string" }
-          - label: "Address"
-            name: "address"
-            widget: "object"
+          - { name: name, label: "Practice Name", widget: string }
+          - name: address
+            label: Address
+            widget: object
             fields:
-              - { label: "Line 1", name: "line1", widget: "string" }
-              - { label: "Line 2", name: "line2", widget: "string" }
-              - { label: "Town", name: "town", widget: "string" }
-              - { label: "Postcode", name: "postcode", widget: "string" }
-          - { label: "Phone", name: "phone", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Website URL", name: "url", widget: "string" }
-          - label: "Opening hours"
-            name: "openingHours"
-            widget: "list"
+              - { name: line1, label: "Address Line 1", widget: string }
+              - { name: line2, label: "Address Line 2", widget: string }
+              - { name: town, label: Town, widget: string }
+              - { name: county, label: County, widget: string }
+              - { name: postcode, label: Postcode, widget: string }
+          - { name: phone, label: "Phone Number", widget: string,
+              hint: "Format: 01333 432 588" }
+          - { name: email, label: "General Email", widget: string }
+          - { name: prescriptionEmail, label: "Prescriptions Email", widget: string }
+          - name: openingHours
+            label: "Opening Hours"
+            widget: list
+            summary: "{{fields.day}}: {{fields.open}}–{{fields.close}}"
             fields:
-              - { label: "Day", name: "day", widget: "string" }
-              - { label: "Open (e.g. 08:00)", name: "open", widget: "string", required: false }
-              - { label: "Close (e.g. 18:00)", name: "close", widget: "string", required: false }
+              - { name: day, label: Day, widget: string }
+              - { name: open, label: "Opens (e.g. 08:00)", widget: string, required: false,
+                  hint: "Leave blank for closed" }
+              - { name: close, label: "Closes (e.g. 18:00)", widget: string, required: false }
+          - name: plannedClosures
+            label: "Planned Closures"
+            widget: list
+            hint: "Public holidays and PLT dates shown on the Opening Hours page"
+            summary: "{{fields.date}} — {{fields.reason}}"
+            fields:
+              - { name: date, label: Date, widget: string,
+                  hint: "e.g. '25 December 2026'" }
+              - { name: reason, label: Reason, widget: string,
+                  hint: "e.g. 'Christmas Day' or 'Protected Learning Time'" }
+              - { name: details, label: Details, widget: string, required: false,
+                  hint: "e.g. 'Practice closes at 1pm' — leave blank for full-day closure" }
