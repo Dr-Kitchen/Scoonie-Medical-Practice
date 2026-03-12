@@ -119,6 +119,30 @@ collections:
         required: false
         hint: "Optional extra information shown on the team card"
 
+  - name: campaigns
+    label: "Health Campaigns"
+    label_singular: "Campaign"
+    folder: src/content/campaigns
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { name: title, label: Title, widget: string,
+          hint: "e.g. 'Flu Vaccination 2026'" }
+      - name: body
+        label: Description
+        widget: markdown
+        hint: "Short description shown on the homepage campaign card."
+      - { name: link_url, label: "Link URL", widget: string, required: false,
+          hint: "Link to more information, e.g. an NHS Inform page" }
+      - { name: link_text, label: "Link Text", widget: string, required: false, default: "Find out more",
+          hint: "Text for the link button" }
+      - { name: start_date, label: "Start Date", widget: datetime, required: false,
+          hint: "Campaign appears from this date" }
+      - { name: end_date, label: "End Date", widget: datetime, required: false,
+          hint: "Campaign disappears after this date" }
+      - { name: active, label: Active, widget: boolean, default: true }
+
   - name: news
     label: "News & Updates"
     label_singular: "News Post"

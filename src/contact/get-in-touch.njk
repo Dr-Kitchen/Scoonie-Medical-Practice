@@ -73,9 +73,72 @@ breadcrumb:
     </div>
   </div>
 
+  {# ── MAP ──────────────────────────────────────────────────────────────────── #}
+  <div class="mb-8">
+    <h2 class="font-semibold text-neutral-dark mb-3">Find us</h2>
+    <div class="rounded-lg overflow-hidden border border-gray-200">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-2.998%2C56.193%2C-2.985%2C56.199&layer=mapnik&marker=56.196%2C-2.9915"
+        width="100%"
+        height="300"
+        style="border:0;"
+        loading="lazy"
+        title="Map showing the location of Leven Health Centre"
+      ></iframe>
+    </div>
+    <p class="text-sm text-neutral-mid mt-2">
+      <a href="https://www.google.com/maps/search/Leven+Health+Centre+Victoria+Road+Leven+Fife" rel="noopener noreferrer" class="text-brand-primary">Get directions on Google Maps →</a>
+    </p>
+  </div>
+
+  {# ── CONTACT FORM ───────────────────────────────────────────────────────── #}
+  <div class="contact-block mb-8">
+    <h2 class="font-semibold text-neutral-dark mb-3">Send us a message</h2>
+    <div class="bg-amber-50 border border-amber-200 rounded p-3 mb-4 text-sm text-neutral-dark">
+      <strong>Do not use this form for urgent medical queries.</strong> If you need urgent help, call us on <a href="tel:{{ site.phone | replace(' ', '') }}" class="text-brand-primary font-semibold">{{ site.phone }}</a> or NHS 24 on <a href="tel:111" class="text-brand-primary font-semibold">111</a>.
+    </div>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+      <p class="hidden">
+        <label>Don't fill this out: <input name="bot-field"></label>
+      </p>
+      <div>
+        <label for="contact-name" class="block text-sm font-medium text-neutral-dark mb-1">Name <span class="text-red-600">*</span></label>
+        <input type="text" id="contact-name" name="name" required class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary">
+      </div>
+      <div>
+        <label for="contact-dob" class="block text-sm font-medium text-neutral-dark mb-1">Date of birth <span class="text-neutral-mid">(optional)</span></label>
+        <input type="date" id="contact-dob" name="dob" class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary">
+      </div>
+      <div>
+        <label for="contact-email" class="block text-sm font-medium text-neutral-dark mb-1">Email or phone number <span class="text-red-600">*</span></label>
+        <input type="text" id="contact-email" name="contact" required class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary">
+      </div>
+      <div>
+        <label for="contact-category" class="block text-sm font-medium text-neutral-dark mb-1">Category</label>
+        <select id="contact-category" name="category" class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary">
+          <option value="general">General enquiry</option>
+          <option value="prescription">Prescription query</option>
+          <option value="letter">Letter or form request</option>
+          <option value="registration">Registration question</option>
+          <option value="feedback">Feedback</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="contact-message" class="block text-sm font-medium text-neutral-dark mb-1">Message <span class="text-red-600">*</span></label>
+        <textarea id="contact-message" name="message" rows="5" required class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary"></textarea>
+      </div>
+      <button type="submit" class="btn btn--primary">Send message</button>
+    </form>
+  </div>
+
   <div class="prose-content">
     <h2>BSL users</h2>
     <p>If you use British Sign Language, you can contact us using the <a href="{{ site.bslLink }}" rel="noopener noreferrer">ContactSCOTLAND BSL video relay service</a>.</p>
+
+    <h2>Information in other languages</h2>
+    <p>NHS Inform provides health information in <a href="https://www.nhsinform.scot/translations/" rel="noopener noreferrer">multiple languages</a>. If you need an interpreter for your appointment, please let us know when booking and we will arrange this.</p>
+    <p>If you have medical records or documents in a language other than English, we require an official English translation before they can be reviewed by our clinical team.</p>
 
     <h2>Accessibility</h2>
     <p>Leven Health Centre has step-free access, accessible toilet facilities, and a hearing loop. If you have any access requirements, please let our reception team know when booking your appointment.</p>

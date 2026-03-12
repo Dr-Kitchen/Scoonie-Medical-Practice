@@ -5,6 +5,7 @@ module.exports = function(eleventyConfig) {
 
   // Passthrough copies
   eleventyConfig.addPassthroughCopy("src/assets/js");
+  eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("public");
 
@@ -46,6 +47,17 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addCollection("alerts", function(api) {
     return api.getFilteredByGlob("src/content/alerts/*.md");
+  });
+
+  eleventyConfig.addCollection("campaigns", function(api) {
+    return api.getFilteredByGlob("src/content/campaigns/*.md")
+      .filter(item => {
+        if (item.data.active === false) return false;
+        const now = new Date();
+        if (item.data.start_date && new Date(item.data.start_date) > now) return false;
+        if (item.data.end_date && new Date(item.data.end_date) < now) return false;
+        return true;
+      });
   });
 
   // Filter: returns only currently active alerts, respecting optional date range

@@ -5,6 +5,7 @@
     "url": "/get-help/",
     "children": [
       { "label": "Book an Appointment", "url": "/get-help/book-appointment/" },
+      { "label": "Before Your Appointment", "url": "/get-help/before-your-appointment/" },
       { "label": "Urgent Care", "url": "/get-help/urgent-care/" },
       { "label": "Pharmacy First", "url": "/get-help/pharmacy-first/" },
       { "label": "Self-Referral Services", "url": "/get-help/self-referral/" }
@@ -34,6 +35,8 @@
       { "label": "Our Team", "url": "/about/our-team/" },
       { "label": "Opening Hours", "url": "/about/opening-hours/" },
       { "label": "How We Work", "url": "/about/how-we-work/" },
+      { "label": "Digital Services", "url": "/about/digital-services/" },
+      { "label": "Forms & Documents", "url": "/about/forms-and-documents/" },
       { "label": "News", "url": "/about/news/" }
     ]
   },
