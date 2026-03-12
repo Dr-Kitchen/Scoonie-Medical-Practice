@@ -42,9 +42,15 @@
     "category": "gp"
   },
   {
-    "name": "Mental Health Nursing Team",
-    "role": "Mental Health Nurses",
-    "qualifications": "Our mental health nurses offer direct support for patients experiencing mental health difficulties. They work alongside the GP team to provide assessment and ongoing care.",
+    "name": "Seonad",
+    "role": "Mental Health Nurse",
+    "qualifications": "Available for direct booking via reception. Our mental health nurses provide assessment and support for patients experiencing mental health difficulties.",
+    "category": "nurse"
+  },
+  {
+    "name": "Andrew",
+    "role": "Mental Health Nurse",
+    "qualifications": "Available for direct booking via reception.",
     "category": "nurse"
   },
   {
