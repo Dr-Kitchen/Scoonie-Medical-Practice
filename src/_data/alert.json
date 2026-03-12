@@ -1,6 +1,6 @@
 {
-  "active": false,
+  "active": true,
   "severity": "info",
-  "title": "Bank Holiday Closure",
-  "body": "The surgery will be closed on Monday 6 January 2025 for the New Year public holiday. For urgent medical advice, please contact NHS 24 on 111."
+  "title": "Protected Learning Time — Tuesday 8 September, closing at 1pm",
+  "body": "The practice will close at 1:00pm on Tuesday 8 September 2026 for a Protected Learning Time (PLT) session. For urgent medical advice after 1pm, please call NHS 24 on 111."
 }

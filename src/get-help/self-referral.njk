@@ -1,8 +1,8 @@
 ---
 layout: layouts/page.njk
 title: Self-referral services
-intro: "You can refer yourself directly to many NHS services — no appointment with us needed first."
-description: "Self-refer directly to NHS physiotherapy, mental health, smoking cessation, and other services in Fife without a GP referral."
+intro: "You can refer yourself directly to many NHS and community services — no appointment with us needed first."
+description: "Self-refer directly to NHS physiotherapy, mental health, sexual health, and other services in Fife without a GP referral."
 breadcrumb:
   - label: Get Help
     url: /get-help/
@@ -10,32 +10,46 @@ breadcrumb:
 ---
 
 <div class="prose-content max-w-3xl mb-8">
-  <p>Many NHS services in Fife allow you to refer yourself directly, without needing a GP appointment first. This is often faster and just as effective.</p>
+  <p>Many NHS services in Fife allow you to refer yourself directly, without needing a GP appointment first. This is often faster and just as effective — and it frees up GP appointments for people who need them.</p>
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl">
+{% set categories = [
+  { "id": "physical", "label": "Physical health" },
+  { "id": "mental",   "label": "Mental health and wellbeing" },
+  { "id": "sexual",   "label": "Sexual and reproductive health" },
+  { "id": "children", "label": "Children and families" },
+  { "id": "travel",   "label": "Travel and vaccinations" },
+  { "id": "other",    "label": "Other services" }
+] %}
 
-  {% for service in selfReferralServices %}
-  <div class="service-card">
-    <h2 class="service-card__title text-base">{{ service.name }}</h2>
-    <p class="service-card__desc">{{ service.description }}</p>
-    {% if service.howToRefer %}
-    <p class="text-sm mt-2"><strong>How to refer:</strong> {{ service.howToRefer }}</p>
-    {% endif %}
-    {% if service.link %}
-    <a href="{{ service.link }}" class="text-brand-primary text-sm font-medium mt-2 inline-block" rel="noopener noreferrer">Find out more →</a>
-    {% endif %}
-    {% if service.phone %}
-    <p class="text-sm mt-1"><a href="tel:{{ service.phone | replace(' ', '') }}" class="text-brand-primary">{{ service.phone }}</a></p>
-    {% endif %}
-    {% if service.secondPhone %}
-    <p class="text-sm mt-1">{% if service.secondPhoneLabel %}<span class="text-neutral-mid">{{ service.secondPhoneLabel }}:</span> {% endif %}<a href="tel:{{ service.secondPhone | replace(' ', '') }}" class="text-brand-primary">{{ service.secondPhone }}</a></p>
-    {% endif %}
-  </div>
-  {% endfor %}
+{% for cat in categories %}
+  <section aria-labelledby="cat-{{ cat.id }}" class="mb-10">
+    <h2 id="cat-{{ cat.id }}" class="text-xl font-bold text-neutral-dark mb-4 border-b border-gray-200 pb-2">{{ cat.label }}</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      {% for service in selfReferralServices %}
+        {% if service.category == cat.id %}
+        <div class="service-card">
+          <h3 class="service-card__title text-base">{{ service.name }}</h3>
+          <p class="service-card__desc">{{ service.description }}</p>
+          {% if service.howToRefer %}
+          <p class="text-sm mt-2"><strong>How to refer:</strong> {{ service.howToRefer }}</p>
+          {% endif %}
+          {% if service.link %}
+          <a href="{{ service.link }}" class="text-brand-primary text-sm font-medium mt-2 inline-block" rel="noopener noreferrer">Find out more →</a>
+          {% endif %}
+          {% if service.phone %}
+          <p class="text-sm mt-1"><a href="tel:{{ service.phone | replace(' ', '') }}" class="text-brand-primary font-medium">{{ service.phone }}</a></p>
+          {% endif %}
+          {% if service.secondPhone %}
+          <p class="text-sm mt-1">{% if service.secondPhoneLabel %}<span class="text-neutral-mid">{{ service.secondPhoneLabel }}:</span> {% endif %}<a href="tel:{{ service.secondPhone | replace(' ', '') }}" class="text-brand-primary">{{ service.secondPhone }}</a></p>
+          {% endif %}
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+{% endfor %}
 
-</div>
-
-<div class="mt-8 prose-content max-w-3xl">
+<div class="mt-4 prose-content max-w-3xl">
   <p class="text-sm text-neutral-mid">Can't find what you need? <a href="/contact/get-in-touch/">Contact us</a> and we'll help you find the right service.</p>
 </div>

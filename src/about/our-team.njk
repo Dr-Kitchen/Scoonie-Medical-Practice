@@ -10,17 +10,14 @@ breadcrumb:
 ---
 
 <div class="prose-content max-w-3xl mb-8">
-  <p>Our team works together to provide the best possible care for our patients. Below you'll find information about each member of our clinical and support team.</p>
+  <p>Our team works together to provide the best possible care for our patients. We are also fortunate to have GP Trainees and medical students attached to our practice. With a patient's consent, they may carry out consultations as part of their training.</p>
 </div>
-
-{% set gps = team | selectattr("category", "equalto", "gp") %}
-{% set nurses = team | selectattr("category", "equalto", "nurse") %}
-{% set other = team | rejectattr("category", "equalto", "gp") | rejectattr("category", "equalto", "nurse") %}
 
 <section aria-labelledby="gp-heading" class="mb-10">
   <h2 id="gp-heading" class="text-xl font-bold text-neutral-dark mb-4">Doctors</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-    {% for member in gps %}
+    {% for member in team %}
+    {% if member.category == "gp" %}
     <div class="staff-card">
       <div class="staff-card__photo" aria-hidden="true">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-16 h-16 text-brand-primary opacity-40">
@@ -35,6 +32,7 @@ breadcrumb:
         {% endif %}
       </div>
     </div>
+    {% endif %}
     {% endfor %}
   </div>
 </section>
@@ -42,7 +40,8 @@ breadcrumb:
 <section aria-labelledby="nurses-heading" class="mb-10">
   <h2 id="nurses-heading" class="text-xl font-bold text-neutral-dark mb-4">Nursing team</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-    {% for member in nurses %}
+    {% for member in team %}
+    {% if member.category == "nurse" %}
     <div class="staff-card">
       <div class="staff-card__photo" aria-hidden="true">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-16 h-16 text-brand-primary opacity-40">
@@ -57,6 +56,7 @@ breadcrumb:
         {% endif %}
       </div>
     </div>
+    {% endif %}
     {% endfor %}
   </div>
 </section>
@@ -64,7 +64,8 @@ breadcrumb:
 <section aria-labelledby="support-heading">
   <h2 id="support-heading" class="text-xl font-bold text-neutral-dark mb-4">Support team</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-    {% for member in other %}
+    {% for member in team %}
+    {% if member.category != "gp" and member.category != "nurse" %}
     <div class="staff-card">
       <div class="staff-card__photo" aria-hidden="true">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-16 h-16 text-brand-primary opacity-40">
@@ -79,6 +80,7 @@ breadcrumb:
         {% endif %}
       </div>
     </div>
+    {% endif %}
     {% endfor %}
   </div>
 </section>
