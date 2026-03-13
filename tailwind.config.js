@@ -5,9 +5,11 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          primary: '#005eb8',
-          dark: '#003f7f',
-          light: '#e8f1fb',
+          primary: '#2D3A6E',
+          dark: '#1E2A5E',
+          light: '#EEF0F7',
+          accent: '#2EC4B2',
+          'accent-dark': '#22A699',
         },
         neutral: {
           warm: '#f8f5f0',
@@ -15,7 +17,7 @@ module.exports = {
           dark: '#1a1a1a',
         },
         alert: {
-          info: '#005eb8',
+          info: '#2D3A6E',
           warning: '#b45309',
           urgent: '#b91c1c',
         }

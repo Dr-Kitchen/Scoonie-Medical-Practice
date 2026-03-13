@@ -4,9 +4,9 @@
 
       <!-- Contact details -->
       <div>
+        <img src="/assets/images/logo.svg" alt="{{ site.name }}" class="h-10 w-auto mb-4">
         <h2 class="site-footer__heading">Contact us</h2>
         <address class="not-italic space-y-2 text-sm">
-          <p>{{ site.name }}</p>
           <p>{{ site.address.line1 }}<br>{{ site.address.line2 }}<br>{{ site.address.town }}<br>{{ site.address.county }}<br>{{ site.address.postcode }}</p>
           <p>
             <a href="tel:{{ site.phone | replace(' ', '') }}">
