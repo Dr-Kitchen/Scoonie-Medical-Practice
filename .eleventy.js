@@ -6,6 +6,7 @@ module.exports = function(eleventyConfig) {
   // Passthrough copies
   eleventyConfig.addPassthroughCopy("src/assets/js");
   eleventyConfig.addPassthroughCopy("src/assets/images");
+  eleventyConfig.addPassthroughCopy("src/assets/forms");
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("public");
 

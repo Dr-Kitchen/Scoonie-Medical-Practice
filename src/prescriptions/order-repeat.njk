@@ -26,7 +26,7 @@ breadcrumb:
   <p>Not registered with Patient Access? <a href="{{ site.patientAccess }}" rel="noopener noreferrer">Register here</a> — you'll need your NHS number and a form of ID.</p>
 
   <h2>Option 2 — By email</h2>
-  <p>Email your repeat prescription request to <a href="mailto:{{ site.prescriptionEmail }}">{{ site.prescriptionEmail }}</a>. Please include:</p>
+  <p>Email your repeat prescription request to <a href="#" data-email="{{ site.prescriptionEmail | replace('@', '|') }}" class="obfuscated-email">Loading...</a>. Please include:</p>
   <ul>
     <li>Your full name and date of birth</li>
     <li>The name and dosage of each medication you need</li>

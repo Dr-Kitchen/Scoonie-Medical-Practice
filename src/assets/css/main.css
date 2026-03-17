@@ -311,6 +311,24 @@
     @apply bg-white border-2 border-brand-primary rounded-lg p-5;
   }
 
+  /* Cookie consent */
+  .cookie-consent {
+    @apply fixed bottom-0 left-0 right-0 z-50 bg-neutral-dark text-gray-200 px-4 py-4;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+  }
+  .cookie-consent.is-hidden {
+    @apply hidden;
+  }
+  .cookie-consent__inner {
+    @apply max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4;
+  }
+  .cookie-consent__text {
+    @apply text-sm leading-relaxed flex-1;
+  }
+  .cookie-consent__actions {
+    @apply flex gap-3 flex-shrink-0;
+  }
+
   /* Footer */
   .site-footer {
     @apply bg-neutral-dark text-gray-300 py-10;

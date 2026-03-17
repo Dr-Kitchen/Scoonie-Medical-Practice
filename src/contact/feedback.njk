@@ -15,7 +15,7 @@ breadcrumb:
   <p>If you'd like to pass on thanks to a member of staff, or have a suggestion for how we could improve, please:</p>
   <ul>
     <li>Speak to our reception team in person or by phone</li>
-    <li>Email us at <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+    <li>Email us at <a href="#" data-email="{{ site.email | replace('@', '|') }}" class="obfuscated-email">Loading...</a></li>
     <li>Complete the NHS Friends and Family Test — ask at reception for a form</li>
   </ul>
 
@@ -25,7 +25,7 @@ breadcrumb:
   <ul>
     <li>Ask at reception to speak to the practice manager</li>
     <li>Write to us at Leven Health Centre, Victoria Road, Leven, Fife, KY8 4ET</li>
-    <li>Email us at <a href="mailto:{{ site.email }}">{{ site.email }}</a> — please mark your email "Complaint"</li>
+    <li>Email us at <a href="#" data-email="{{ site.email | replace('@', '|') }}" class="obfuscated-email">Loading...</a> — please mark your email "Complaint"</li>
   </ul>
   <p>We will acknowledge your complaint within 3 working days and aim to respond fully within 20 working days.</p>
 

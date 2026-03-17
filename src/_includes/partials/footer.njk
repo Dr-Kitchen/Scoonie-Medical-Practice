@@ -14,7 +14,7 @@
             </a>
           </p>
           <p>
-            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+            <a href="#" data-email="{{ site.email | replace('@', '|') }}" class="obfuscated-email">Loading...</a>
           </p>
         </address>
       </div>
