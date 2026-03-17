@@ -44,3 +44,18 @@
   from = "/data-protection-notice/*"
   to = "/contact/data-protection/"
   status = 301
+
+[[redirects]]
+  from = "/complaints/*"
+  to = "/contact/feedback/"
+  status = 301
+
+[[redirects]]
+  from = "/news/*"
+  to = "/about/news/"
+  status = 301
+
+[[redirects]]
+  from = "/medical-students/*"
+  to = "/about/students-and-training/"
+  status = 301

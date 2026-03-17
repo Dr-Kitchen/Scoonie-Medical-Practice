@@ -28,6 +28,12 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  // Head filter — returns first N items from array
+  eleventyConfig.addFilter("head", function(array, n) {
+    if (!Array.isArray(array)) return array;
+    return array.slice(0, n);
+  });
+
   // CMS-managed collections
   eleventyConfig.addCollection("services", function(api) {
     return api.getFilteredByGlob("src/content/services/*.md")

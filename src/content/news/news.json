@@ -1,0 +1,9 @@
+{
+  "layout": "layouts/page.njk",
+  "tags": "news",
+  "permalink": "/about/news/{{ page.fileSlug }}/",
+  "breadcrumb": [
+    { "label": "About us", "url": "/about/" },
+    { "label": "News", "url": "/about/news/" }
+  ]
+}

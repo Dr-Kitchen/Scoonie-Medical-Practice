@@ -22,8 +22,8 @@ breadcrumb:
         <h2 class="text-lg font-semibold text-neutral-dark mb-2">
           <a href="{{ post.url }}" class="hover:text-brand-primary">{{ post.data.title }}</a>
         </h2>
-        {% if post.data.description %}
-        <p class="text-sm text-neutral-mid">{{ post.data.description }}</p>
+        {% if post.data.summary %}
+        <p class="text-sm text-neutral-mid">{{ post.data.summary }}</p>
         {% endif %}
         <a href="{{ post.url }}" class="text-brand-primary text-sm font-medium mt-3 inline-block">Read more →</a>
       </article>

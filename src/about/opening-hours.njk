@@ -44,25 +44,21 @@ breadcrumb:
     <h2>Public holidays</h2>
     <p>We are closed on Scottish public holidays. Upcoming closure dates:</p>
     <ul>
-      <li>Thursday 25 December 2025 — Christmas Day</li>
-      <li>Friday 26 December 2025 — Boxing Day</li>
-      <li>Thursday 1 January 2026 — New Year's Day</li>
-      <li>Friday 2 January 2026 — 2 January holiday</li>
-      <li>Friday 3 April 2026 — Good Friday</li>
-      <li>Monday 6 April 2026 — Easter Monday</li>
-      <li>Monday 4 May 2026 — Early May bank holiday</li>
-      <li>Monday 5 October 2026 — Autumn holiday</li>
-      <li>Friday 25 December 2026 — Christmas Day</li>
-      <li>Monday 28 December 2026 — Christmas Day (substitute)</li>
-      <li>Friday 1 January 2027 — New Year's Day</li>
-      <li>Monday 4 January 2027 — 2 January holiday (substitute)</li>
+      {% for closure in site.plannedClosures %}
+        {% if "Protected Learning Time" not in closure.reason %}
+      <li>{{ closure.date }} — {{ closure.reason }}</li>
+        {% endif %}
+      {% endfor %}
     </ul>
 
     <h2>Protected Learning Time (PLT)</h2>
     <p>The practice will close early at <strong>1:00pm</strong> on the following dates for Protected Learning Time (PLT) sessions. For urgent medical advice after 1pm on these days, please call NHS 24 on <a href="tel:111">111</a>.</p>
     <ul>
-      <li>Tuesday 8 September 2026</li>
-      <li>Wednesday 18 November 2026</li>
+      {% for closure in site.plannedClosures %}
+        {% if "Protected Learning Time" in closure.reason %}
+      <li>{{ closure.date }}{% if closure.details %} — {{ closure.details }}{% endif %}</li>
+        {% endif %}
+      {% endfor %}
     </ul>
 
     <h2>Out of hours</h2>
