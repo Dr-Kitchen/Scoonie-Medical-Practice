@@ -1,3 +1,30 @@
+// Cookie consent
+(function () {
+  var COOKIE_KEY = 'cookie_consent';
+  var banner = document.getElementById('cookie-consent');
+  var acceptBtn = document.getElementById('cookie-accept');
+  if (!banner || !acceptBtn) return;
+
+  if (!localStorage.getItem(COOKIE_KEY)) {
+    banner.classList.remove('is-hidden');
+  }
+
+  acceptBtn.addEventListener('click', function () {
+    localStorage.setItem(COOKIE_KEY, '1');
+    banner.classList.add('is-hidden');
+  });
+})();
+
+// Email obfuscation — reveal on click/hover
+(function () {
+  document.querySelectorAll('[data-email]').forEach(function (el) {
+    var parts = el.dataset.email.split('|');
+    var addr = parts[0] + '@' + parts[1];
+    el.textContent = addr;
+    el.href = 'mailto:' + addr;
+  });
+})();
+
 // Alert banner dismiss — supports multiple alerts
 (function () {
   document.querySelectorAll('[data-alert-banner]').forEach(function (banner) {

@@ -6,6 +6,7 @@ module.exports = function(eleventyConfig) {
   // Passthrough copies
   eleventyConfig.addPassthroughCopy("src/assets/js");
   eleventyConfig.addPassthroughCopy("src/assets/images");
+  eleventyConfig.addPassthroughCopy("src/assets/forms");
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("public");
 
@@ -25,6 +26,12 @@ module.exports = function(eleventyConfig) {
     return new Date(date).toLocaleDateString("en-GB", {
       day: "numeric", month: "long", year: "numeric"
     });
+  });
+
+  // Head filter — returns first N items from array
+  eleventyConfig.addFilter("head", function(array, n) {
+    if (!Array.isArray(array)) return array;
+    return array.slice(0, n);
   });
 
   // CMS-managed collections

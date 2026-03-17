@@ -70,6 +70,19 @@
     </svg>
   </a>
 
+  {# Cookie consent banner #}
+  <div id="cookie-consent" class="cookie-consent is-hidden" role="region" aria-label="Cookie consent">
+    <div class="cookie-consent__inner">
+      <p class="cookie-consent__text">
+        This website uses essential cookies to remember your preferences (such as dismissed alerts). We do not use tracking or advertising cookies.
+        <a href="/contact/data-protection/" class="text-white underline">Learn more</a>
+      </p>
+      <div class="cookie-consent__actions">
+        <button id="cookie-accept" class="btn btn--primary text-sm" style="min-height:40px;padding:0.5rem 1.25rem;">Accept</button>
+      </div>
+    </div>
+  </div>
+
   {# Site data for client-side JS (open/closed indicator) #}
   <script>
     window.__SITE_DATA__ = {

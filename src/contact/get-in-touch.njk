@@ -42,7 +42,7 @@ breadcrumb:
           <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
         </svg>
         <div>
-          <p><a href="mailto:{{ site.email }}" class="text-brand-primary">{{ site.email }}</a></p>
+          <p><a href="#" data-email="{{ site.email | replace('@', '|') }}" class="text-brand-primary obfuscated-email">Loading...</a></p>
           <p class="text-sm text-neutral-mid mt-1">We aim to respond to emails within 2 working days. Please do not email urgent medical queries.</p>
         </div>
       </div>
@@ -104,10 +104,6 @@ breadcrumb:
       <div>
         <label for="contact-name" class="block text-sm font-medium text-neutral-dark mb-1">Name <span class="text-red-600">*</span></label>
         <input type="text" id="contact-name" name="name" required class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary">
-      </div>
-      <div>
-        <label for="contact-dob" class="block text-sm font-medium text-neutral-dark mb-1">Date of birth <span class="text-neutral-mid">(optional)</span></label>
-        <input type="date" id="contact-dob" name="dob" class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary">
       </div>
       <div>
         <label for="contact-email" class="block text-sm font-medium text-neutral-dark mb-1">Email or phone number <span class="text-red-600">*</span></label>
