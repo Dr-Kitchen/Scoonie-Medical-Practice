@@ -11,6 +11,7 @@ collections:
 
   - name: alerts
     label: "Alerts & Notices"
+    description: "Manage the coloured alert banners shown at the top of every page."
     label_singular: "Alert"
     folder: src/content/alerts
     create: true
@@ -39,6 +40,7 @@ collections:
 
   - name: services
     label: "Self-Referral Services"
+    description: "Add or edit the self-referral services listed on the website."
     label_singular: "Service"
     folder: src/content/services
     create: true
@@ -76,6 +78,7 @@ collections:
 
   - name: staff
     label: Staff
+    description: "Manage the team members shown on the Our Team page."
     label_singular: "Staff Member"
     folder: src/content/staff
     create: true
@@ -121,6 +124,7 @@ collections:
 
   - name: campaigns
     label: "Health Campaigns"
+    description: "Seasonal health campaigns shown on the homepage (e.g. flu jabs, COVID boosters)."
     label_singular: "Campaign"
     folder: src/content/campaigns
     create: true
@@ -145,6 +149,7 @@ collections:
 
   - name: news
     label: "News & Updates"
+    description: "Write news posts for the News page and homepage."
     label_singular: "News Post"
     folder: src/content/news
     create: true
@@ -168,6 +173,7 @@ collections:
 
   - name: settings
     label: "Site Settings"
+    description: "Update practice details, opening hours and planned closures."
     files:
       - name: practice_info
         label: "Practice Information & Opening Hours"
@@ -208,3 +214,55 @@ collections:
                   hint: "e.g. 'Christmas Day' or 'Protected Learning Time'" }
               - { name: details, label: Details, widget: string, required: false,
                   hint: "e.g. 'Practice closes at 1pm' — leave blank for full-day closure" }
+
+  - name: forms
+    label: "Forms & Documents"
+    description: "Upload and manage the downloadable PDF forms shown on the website."
+    files:
+      - name: registration
+        label: "Patient Registration Form"
+        file: src/_data/forms/registration.json
+        fields:
+          - { name: title, label: "Form Title", widget: string, default: "Patient Registration Form" }
+          - { name: description, label: "Description", widget: text,
+              hint: "Brief description shown on the website" }
+          - { name: file, label: "PDF File", widget: file,
+              media_folder: "/src/assets/forms",
+              public_folder: "/assets/forms",
+              hint: "Click 'Choose file' to upload or replace the PDF" }
+
+      - name: consent
+        label: "Consent to Share Information"
+        file: src/_data/forms/consent.json
+        fields:
+          - { name: title, label: "Form Title", widget: string, default: "Consent to Share Information" }
+          - { name: description, label: "Description", widget: text,
+              hint: "Brief description shown on the website" }
+          - { name: file, label: "PDF File", widget: file,
+              media_folder: "/src/assets/forms",
+              public_folder: "/assets/forms",
+              hint: "Click 'Choose file' to upload or replace the PDF" }
+
+      - name: subject_access
+        label: "Subject Access Request"
+        file: src/_data/forms/subject-access.json
+        fields:
+          - { name: title, label: "Form Title", widget: string, default: "Subject Access Request" }
+          - { name: description, label: "Description", widget: text,
+              hint: "Brief description shown on the website" }
+          - { name: file, label: "PDF File", widget: file,
+              media_folder: "/src/assets/forms",
+              public_folder: "/assets/forms",
+              hint: "Click 'Choose file' to upload or replace the PDF" }
+
+      - name: pelvic_health
+        label: "Pelvic Health Self-Management Leaflet"
+        file: src/_data/forms/pelvic-health.json
+        fields:
+          - { name: title, label: "Form Title", widget: string, default: "Pelvic Health Self-Management Leaflet" }
+          - { name: description, label: "Description", widget: text,
+              hint: "Brief description shown on the website" }
+          - { name: file, label: "PDF File", widget: file,
+              media_folder: "/src/assets/forms",
+              public_folder: "/assets/forms",
+              hint: "Click 'Choose file' to upload or replace the PDF" }
