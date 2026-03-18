@@ -91,41 +91,20 @@ breadcrumb:
     </p>
   </div>
 
-  {# ── CONTACT FORM ───────────────────────────────────────────────────────── #}
+  {# ── EMAIL GUIDANCE ──────────────────────────────────────────────────────── #}
   <div class="contact-block mb-8">
-    <h2 class="font-semibold text-neutral-dark mb-3">Send us a message</h2>
-    <div class="bg-amber-50 border border-amber-200 rounded p-3 mb-4 text-sm text-neutral-dark">
-      <strong>Do not use this form for urgent medical queries.</strong> If you need urgent help, call us on <a href="tel:{{ site.phone | replace(' ', '') }}" class="text-brand-primary font-semibold">{{ site.phone }}</a> or NHS 24 on <a href="tel:111" class="text-brand-primary font-semibold">111</a>.
+    <h2 class="font-semibold text-neutral-dark mb-3">Email us</h2>
+    <div class="contact-block__item">
+      <svg class="contact-block__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+      </svg>
+      <div>
+        <p class="text-sm mb-2">For non-urgent queries, you can email us directly. Please include your full name, date of birth, and a brief description of your query.</p>
+        <p class="mb-1"><a href="#" data-email="{{ site.email | replace('@', '|') }}" class="text-brand-primary font-semibold obfuscated-email">Loading...</a></p>
+        <p class="text-sm text-neutral-mid">General queries only — please do not email clinical or urgent medical issues. We aim to respond within 2 working days.</p>
+        <p class="mt-2 text-sm text-neutral-mid">For prescriptions, email <a href="#" data-email="{{ site.prescriptionEmail | replace('@', '|') }}" class="text-brand-primary obfuscated-email">Loading...</a></p>
+      </div>
     </div>
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
-      <p class="hidden">
-        <label>Don't fill this out: <input name="bot-field"></label>
-      </p>
-      <div>
-        <label for="contact-name" class="block text-sm font-medium text-neutral-dark mb-1">Name <span class="text-red-600">*</span></label>
-        <input type="text" id="contact-name" name="name" required class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary">
-      </div>
-      <div>
-        <label for="contact-email" class="block text-sm font-medium text-neutral-dark mb-1">Email or phone number <span class="text-red-600">*</span></label>
-        <input type="text" id="contact-email" name="contact" required class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary">
-      </div>
-      <div>
-        <label for="contact-category" class="block text-sm font-medium text-neutral-dark mb-1">Category</label>
-        <select id="contact-category" name="category" class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary">
-          <option value="general">General enquiry</option>
-          <option value="prescription">Prescription query</option>
-          <option value="letter">Letter or form request</option>
-          <option value="registration">Registration question</option>
-          <option value="feedback">Feedback</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-      <div>
-        <label for="contact-message" class="block text-sm font-medium text-neutral-dark mb-1">Message <span class="text-red-600">*</span></label>
-        <textarea id="contact-message" name="message" rows="5" required class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:border-brand-primary focus:ring-1 focus:ring-brand-primary"></textarea>
-      </div>
-      <button type="submit" class="btn btn--primary">Send message</button>
-    </form>
   </div>
 
   <div class="prose-content">

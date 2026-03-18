@@ -44,6 +44,23 @@
   </script>
 
   <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!--
+    Netlify Identity widget — loaded only when an identity token is present in
+    the URL (password reset, invite, email confirmation links). This keeps the
+    widget out of every normal page load while allowing the admin auth flow to
+    work correctly.
+  -->
+  <script>
+    (function () {
+      var h = window.location.hash;
+      if (h && /[#&](invite_token|recovery_token|confirmation_token)=/.test(h)) {
+        var s = document.createElement('script');
+        s.src = 'https://identity.netlify.com/v1/netlify-identity-widget.js';
+        document.head.appendChild(s);
+      }
+    })();
+  </script>
 </head>
 <body>
 
