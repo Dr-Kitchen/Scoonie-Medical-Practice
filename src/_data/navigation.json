@@ -47,7 +47,8 @@
     "children": [
       { "label": "Get in Touch", "url": "/contact/get-in-touch/" },
       { "label": "Feedback", "url": "/contact/feedback/" },
-      { "label": "Data Protection", "url": "/contact/data-protection/" }
+      { "label": "Data Protection", "url": "/contact/data-protection/" },
+      { "label": "Accessibility", "url": "/contact/accessibility/" }
     ]
   }
 ]
