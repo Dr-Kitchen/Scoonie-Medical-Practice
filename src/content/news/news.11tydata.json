@@ -1,4 +1,0 @@
-{
-  "permalink": "/about/news/{{ page.fileSlug }}/",
-  "layout": "layouts/page.njk"
-}

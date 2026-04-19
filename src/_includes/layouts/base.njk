@@ -23,7 +23,14 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
-  <!-- Schema.org MedicalClinic -->
+  {# Schema.org MedicalClinic — openingHours built from CMS-managed site.openingHours #}
+  {% set dayAbbr = { "Monday": "Mo", "Tuesday": "Tu", "Wednesday": "We", "Thursday": "Th", "Friday": "Fr", "Saturday": "Sa", "Sunday": "Su" } %}
+  {% set schemaHours = [] %}
+  {% for row in site.openingHours %}
+    {% if row.open and row.close %}
+      {% set schemaHours = (schemaHours.push(dayAbbr[row.day] + " " + row.open + "-" + row.close), schemaHours) %}
+    {% endif %}
+  {% endfor %}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -39,7 +46,7 @@
     "telephone": "{{ site.phone }}",
     "email": "{{ site.email }}",
     "url": "{{ site.url }}",
-    "openingHours": ["Mo-Fr 08:00-18:00"]
+    "openingHours": {{ schemaHours | dump | safe }}
   }
   </script>
 

@@ -9,6 +9,19 @@ breadcrumb:
   - label: Our team
 ---
 
+{% macro teamCard(member, accent) %}
+<div class="bg-white border border-gray-200 border-l-4 {{ accent.border }} rounded-lg p-4">
+  <p class="font-semibold text-neutral-dark">{{ member.data.name }}</p>
+  <p class="text-sm {{ accent.text }} mt-0.5">{{ member.data.role }}</p>
+  {% if member.data.qualifications %}
+  <p class="text-xs text-neutral-mid mt-2 leading-relaxed">{{ member.data.qualifications }}</p>
+  {% endif %}
+  {% if member.content %}
+  <div class="text-xs text-neutral-mid mt-2 leading-relaxed prose-content">{{ member.content | safe }}</div>
+  {% endif %}
+</div>
+{% endmacro %}
+
 <div class="prose-content max-w-3xl mb-8">
   <p>Our team works together to provide the best possible care for our patients. We are also fortunate to have <a href="/about/students-and-training/">GP Trainees and medical students</a> attached to our practice — with a patient's consent, they may carry out consultations as part of their training.</p>
   <p>Some services at Leven Health Centre are provided by NHS Fife CTAC (Community Treatment and Care) staff. <strong>These appointments are booked via NHS Fife Reception at Leven Health Centre, not via Scoonie Medical Practice reception.</strong> This is noted in the relevant sections below.</p>
@@ -17,16 +30,10 @@ breadcrumb:
 <section aria-labelledby="gp-heading" class="mb-10">
   <h2 id="gp-heading" class="text-xl font-bold text-neutral-dark mb-4">Doctors</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {% for member in team %}
-    {% if member.category == "gp" %}
-    <div class="bg-white border border-gray-200 border-l-4 border-l-brand-primary rounded-lg p-4">
-      <p class="font-semibold text-neutral-dark">{{ member.name }}</p>
-      <p class="text-sm text-brand-primary mt-0.5">{{ member.role }}</p>
-      {% if member.qualifications %}
-      <p class="text-xs text-neutral-mid mt-2 leading-relaxed">{{ member.qualifications }}</p>
+    {% for member in collections.staff %}
+      {% if member.data.team == "gp_partners" or member.data.team == "salaried_gps" %}
+        {{ teamCard(member, { border: "border-l-brand-primary", text: "text-brand-primary" }) }}
       {% endif %}
-    </div>
-    {% endif %}
     {% endfor %}
   </div>
 </section>
@@ -35,16 +42,10 @@ breadcrumb:
   <h2 id="anp-heading" class="text-xl font-bold text-neutral-dark mb-2">Nurse Practitioners</h2>
   <p class="text-sm text-neutral-mid mb-4">Our nurse practitioners treat many of the same conditions as GPs. Book via Scoonie Reception on <a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a>.</p>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {% for member in team %}
-    {% if member.category == "anp" %}
-    <div class="bg-white border border-gray-200 border-l-4 border-l-teal-600 rounded-lg p-4">
-      <p class="font-semibold text-neutral-dark">{{ member.name }}</p>
-      <p class="text-sm text-teal-700 mt-0.5">{{ member.role }}</p>
-      {% if member.qualifications %}
-      <p class="text-xs text-neutral-mid mt-2 leading-relaxed">{{ member.qualifications }}</p>
+    {% for member in collections.staff %}
+      {% if member.data.team == "nurse_practitioners" %}
+        {{ teamCard(member, { border: "border-l-teal-600", text: "text-teal-700" }) }}
       {% endif %}
-    </div>
-    {% endif %}
     {% endfor %}
   </div>
 </section>
@@ -53,16 +54,10 @@ breadcrumb:
   <h2 id="mental-heading" class="text-xl font-bold text-neutral-dark mb-2">Mental Health Nurses</h2>
   <p class="text-sm text-neutral-mid mb-4">Our mental health nurses see patients aged 18 and over. You can book directly without a GP referral — contact Scoonie Reception on <a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a>.</p>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {% for member in team %}
-    {% if member.category == "mental" %}
-    <div class="bg-white border border-gray-200 border-l-4 border-l-purple-600 rounded-lg p-4">
-      <p class="font-semibold text-neutral-dark">{{ member.name }}</p>
-      <p class="text-sm text-purple-700 mt-0.5">{{ member.role }}</p>
-      {% if member.qualifications %}
-      <p class="text-xs text-neutral-mid mt-2 leading-relaxed">{{ member.qualifications }}</p>
+    {% for member in collections.staff %}
+      {% if member.data.team == "mental_health" %}
+        {{ teamCard(member, { border: "border-l-purple-600", text: "text-purple-700" }) }}
       {% endif %}
-    </div>
-    {% endif %}
     {% endfor %}
   </div>
 </section>
@@ -71,16 +66,10 @@ breadcrumb:
   <h2 id="pn-heading" class="text-xl font-bold text-neutral-dark mb-2">Primary Care Nurses</h2>
   <p class="text-sm text-neutral-mid mb-4">Our primary care nurses run chronic disease clinics and provide health screening and preventive care. Book via Scoonie Reception on <a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a>.</p>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {% for member in team %}
-    {% if member.category == "pn" %}
-    <div class="bg-white border border-gray-200 border-l-4 border-l-emerald-600 rounded-lg p-4">
-      <p class="font-semibold text-neutral-dark">{{ member.name }}</p>
-      <p class="text-sm text-emerald-700 mt-0.5">{{ member.role }}</p>
-      {% if member.qualifications %}
-      <p class="text-xs text-neutral-mid mt-2 leading-relaxed">{{ member.qualifications }}</p>
+    {% for member in collections.staff %}
+      {% if member.data.team == "practice_nurses" %}
+        {{ teamCard(member, { border: "border-l-emerald-600", text: "text-emerald-700" }) }}
       {% endif %}
-    </div>
-    {% endif %}
     {% endfor %}
   </div>
 </section>
@@ -89,16 +78,10 @@ breadcrumb:
   <h2 id="pharmacy-heading" class="text-xl font-bold text-neutral-dark mb-2">Pharmacy Team</h2>
   <p class="text-sm text-neutral-mid mb-4">Our practice pharmacist and NHS Fife pharmacy team manage medication reviews, prescribing support, and patient medication queries.</p>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {% for member in team %}
-    {% if member.category == "pharmacy" %}
-    <div class="bg-white border border-gray-200 border-l-4 border-l-amber-600 rounded-lg p-4">
-      <p class="font-semibold text-neutral-dark">{{ member.name }}</p>
-      <p class="text-sm text-amber-700 mt-0.5">{{ member.role }}</p>
-      {% if member.qualifications %}
-      <p class="text-xs text-neutral-mid mt-2 leading-relaxed">{{ member.qualifications }}</p>
+    {% for member in collections.staff %}
+      {% if member.data.team == "pharmacy" %}
+        {{ teamCard(member, { border: "border-l-amber-600", text: "text-amber-700" }) }}
       {% endif %}
-    </div>
-    {% endif %}
     {% endfor %}
   </div>
 </section>
@@ -110,16 +93,10 @@ breadcrumb:
   </div>
   <p class="text-sm text-neutral-mid mb-4">CTAC nurses provide wound care, ear irrigation, B12 injections, suture removal, blood tests, and other treatment room procedures.</p>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {% for member in team %}
-    {% if member.category == "ctac" %}
-    <div class="bg-white border border-gray-200 border-l-4 border-l-slate-500 rounded-lg p-4">
-      <p class="font-semibold text-neutral-dark">{{ member.name }}</p>
-      <p class="text-sm text-slate-600 mt-0.5">{{ member.role }}</p>
-      {% if member.qualifications %}
-      <p class="text-xs text-neutral-mid mt-2 leading-relaxed">{{ member.qualifications }}</p>
+    {% for member in collections.staff %}
+      {% if member.data.team == "ctac" %}
+        {{ teamCard(member, { border: "border-l-slate-500", text: "text-slate-600" }) }}
       {% endif %}
-    </div>
-    {% endif %}
     {% endfor %}
   </div>
 </section>
@@ -127,6 +104,11 @@ breadcrumb:
 <section aria-labelledby="other-heading" class="mb-10">
   <h2 id="other-heading" class="text-xl font-bold text-neutral-dark mb-4">Other attached services</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    {% for member in collections.staff %}
+      {% if member.data.team == "physio" %}
+        {{ teamCard(member, { border: "border-l-brand-primary", text: "text-brand-primary" }) }}
+      {% endif %}
+    {% endfor %}
     <div class="bg-white border border-gray-200 border-l-4 border-l-brand-primary rounded-lg p-4">
       <p class="font-semibold text-neutral-dark">First Contact Physiotherapist</p>
       <p class="text-sm text-brand-primary mt-0.5">Physiotherapy</p>
@@ -148,16 +130,10 @@ breadcrumb:
 <section aria-labelledby="admin-heading">
   <h2 id="admin-heading" class="text-xl font-bold text-neutral-dark mb-4">Practice Management</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {% for member in team %}
-    {% if member.category == "admin" %}
-    <div class="bg-white border border-gray-200 border-l-4 border-l-gray-400 rounded-lg p-4">
-      <p class="font-semibold text-neutral-dark">{{ member.name }}</p>
-      <p class="text-sm text-gray-600 mt-0.5">{{ member.role }}</p>
-      {% if member.qualifications %}
-      <p class="text-xs text-neutral-mid mt-2 leading-relaxed">{{ member.qualifications }}</p>
+    {% for member in collections.staff %}
+      {% if member.data.team == "management" or member.data.team == "admin" %}
+        {{ teamCard(member, { border: "border-l-gray-400", text: "text-gray-600" }) }}
       {% endif %}
-    </div>
-    {% endif %}
     {% endfor %}
   </div>
 </section>
