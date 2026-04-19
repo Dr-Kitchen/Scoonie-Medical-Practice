@@ -28,6 +28,11 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  // ISO 8601 date (YYYY-MM-DD) — for sitemap <lastmod> and other machine-readable contexts
+  eleventyConfig.addFilter("htmlDateString", function(date) {
+    return new Date(date).toISOString().split("T")[0];
+  });
+
   // Head filter — returns first N items from array
   eleventyConfig.addFilter("head", function(array, n) {
     if (!Array.isArray(array)) return array;

@@ -101,7 +101,7 @@ description: "Scoonie Medical Practice — NHS GP surgery at Leven Health Centre
 </section>
 
 {# ── NEWS TEASER ───────────────────────────────────────────────────────────── #}
-{% set latestNews = collections.news | sort(true, false, 'date') %}
+{% set latestNews = collections.news %}
 {% if latestNews.length %}
 <section class="news-teaser" aria-labelledby="news-heading">
   <div class="max-w-6xl mx-auto">

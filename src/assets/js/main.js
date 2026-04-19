@@ -193,8 +193,8 @@
     }
   }
 
-  // Handle PLT days (closing at 1pm)
-  if (closure && closure.details && closure.details.toLowerCase().indexOf('1:00pm') !== -1) {
+  // Handle PLT days (closing at 1pm) — tolerate "1pm", "1 pm", "1:00pm", "1.00 pm"
+  if (closure && closure.details && /1(?:[:.]?00)?\s*pm/i.test(closure.details)) {
     var pltClose = 13 * 60; // 1pm
     if (currentMinutes < pltClose) {
       indicator.textContent = 'Closing at 1pm today';
@@ -292,7 +292,7 @@
     },
     urgent: {
       title: 'Get urgent help',
-      body: 'If you need urgent same-day care, call us on <a href="tel:01333432588" class="text-brand-primary font-semibold">01333 432 588</a> from 08:00. Our team will arrange the most appropriate appointment.',
+      body: 'If you need urgent same-day care, call us on <a href="tel:{{phoneHref}}" class="text-brand-primary font-semibold">{{phone}}</a> from 08:00. Our team will arrange the most appropriate appointment.',
       links: [{ text: 'More about urgent care', url: '/get-help/urgent-care/' }]
     },
     pharmacy: {
@@ -302,7 +302,7 @@
     },
     call_us: {
       title: 'Call us to book an appointment',
-      body: 'Call <a href="tel:01333432588" class="text-brand-primary font-semibold">01333 432 588</a> from 08:00, Monday to Friday. Our reception team will help match you to the right clinician.',
+      body: 'Call <a href="tel:{{phoneHref}}" class="text-brand-primary font-semibold">{{phone}}</a> from 08:00, Monday to Friday. Our reception team will help match you to the right clinician.',
       links: [{ text: 'More about appointments', url: '/get-help/book-appointment/' }]
     },
     mental_crisis_result: {
@@ -340,7 +340,7 @@
     },
     other: {
       title: 'Other services',
-      body: 'We offer a range of services. Choose from the links below, or call us on <a href="tel:01333432588" class="text-brand-primary font-semibold">01333 432 588</a> and we\'ll help.',
+      body: 'We offer a range of services. Choose from the links below, or call us on <a href="tel:{{phoneHref}}" class="text-brand-primary font-semibold">{{phone}}</a> and we\'ll help.',
       links: [
         { text: 'Self-referral services', url: '/get-help/self-referral/' },
         { text: 'Contact us', url: '/contact/get-in-touch/' },
@@ -383,13 +383,20 @@
     bindEvents();
   }
 
+  var sitePhone = (window.__SITE_DATA__ && window.__SITE_DATA__.phone) || '';
+  var sitePhoneHref = sitePhone.replace(/\s/g, '');
+
+  function interpolate(text) {
+    return text.replace(/\{\{phone\}\}/g, sitePhone).replace(/\{\{phoneHref\}\}/g, sitePhoneHref);
+  }
+
   function renderResult(resultKey) {
     var r = results[resultKey];
     if (!r) return;
 
     var html = '<div class="care-nav__result">';
     html += '<h3 class="text-lg font-bold text-neutral-dark mb-2">' + r.title + '</h3>';
-    html += '<p class="text-sm text-neutral-mid mb-4 leading-relaxed">' + r.body + '</p>';
+    html += '<p class="text-sm text-neutral-mid mb-4 leading-relaxed">' + interpolate(r.body) + '</p>';
     if (r.links && r.links.length) {
       html += '<div class="flex flex-wrap gap-3">';
       r.links.forEach(function (link) {
